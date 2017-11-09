@@ -1,0 +1,55 @@
+﻿Public Class frmPopUpComentario
+
+
+    Public Delegate Sub Operar(ByVal pComentario As String)
+    Public Cargar As Operar
+    Public pObligatorio As Boolean
+
+
+    Private Sub Validar()
+
+        If pObligatorio = True Then
+            If String.IsNullOrEmpty(Me.txtComentario.Text) = True Then Throw New Exception("Ingrese el Comentario.")
+        End If
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmPopUpComentario_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        i_LlaveBusqueda = Nothing
+        Me.txtComentario.Text = String.Empty
+
+    End Sub
+
+
+    Private Sub cmdGrabar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdGrabar.ItemClick
+
+        Try
+            Call Me.Validar()
+            Me.Cursor = Cursors.WaitCursor
+
+            If Cargar IsNot Nothing Then
+                Cargar.Invoke(Me.txtComentario.Text)
+            Else
+                i_LlaveBusqueda = Me.txtComentario.Text
+            End If
+
+            Me.Cursor = Cursors.Default
+            Me.Close()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al intentar grabar los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+End Class

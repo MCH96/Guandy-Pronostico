@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Reportes", "Reportes\Reportes.vbproj", "{CA1EF9AD-433A-4BE6-A312-C6253B148A4F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Pronostico", "Pronostico\Pronostico.vbproj", "{B54218BB-7C7A-4CF9-9223-5E8452D728F2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorPronostico", "InstaladorPronostico\InstaladorPronostico.vdproj", "{7DDC671A-0D72-4B85-8B3A-D6BDAFCD5C33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA1EF9AD-433A-4BE6-A312-C6253B148A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1EF9AD-433A-4BE6-A312-C6253B148A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1EF9AD-433A-4BE6-A312-C6253B148A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1EF9AD-433A-4BE6-A312-C6253B148A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B54218BB-7C7A-4CF9-9223-5E8452D728F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B54218BB-7C7A-4CF9-9223-5E8452D728F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B54218BB-7C7A-4CF9-9223-5E8452D728F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B54218BB-7C7A-4CF9-9223-5E8452D728F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDC671A-0D72-4B85-8B3A-D6BDAFCD5C33}.Debug|Any CPU.ActiveCfg = Debug
+		{7DDC671A-0D72-4B85-8B3A-D6BDAFCD5C33}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

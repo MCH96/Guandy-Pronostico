@@ -1,0 +1,461 @@
+﻿Public Class frmEdicionPeriodo
+
+    Dim Obj As PROPeriodoBO
+
+
+    Private Sub AgregarColumnaGrupo(ByVal pPeriodo As Integer, ByVal pMes As Integer)
+
+        Dim cMeses As Infragistics.Win.UltraWinGrid.UltraGridColumn
+        cMeses = ugData.DisplayLayout.Bands(0).Columns.Add(String.Format("{0}_{1}", pPeriodo.ToString, pMes.ToString))
+        cMeses.Header.Caption = NombreMes(pMes)
+        cMeses.Header.Appearance.TextHAlign = Infragistics.Win.HAlign.Center
+        If pPeriodo = Obj.IdPeriodo Then
+            cMeses.CellActivation = Infragistics.Win.UltraWinGrid.Activation.AllowEdit
+        Else
+            cMeses.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+        End If
+        cMeses.CellAppearance.TextHAlign = Infragistics.Win.HAlign.Right
+        cMeses.Format = "#.00"
+        cMeses.Width = 100
+
+        Me.ugData.DisplayLayout.Bands(0).Groups(pPeriodo.ToString).Columns.Add(cMeses)
+
+    End Sub
+
+
+    Private Sub Limpiar()
+
+        Obj = New PROPeriodoBO
+        Me.txtPeriodo.Tag = Nothing
+        Me.txtPeriodo.Text = String.Empty
+        Me.txtCliente.Tag = Nothing
+        Me.txtCliente.Text = String.Empty
+        Me.chkEnero.Text = NombreMes(1)
+        Me.chkFebrero.Text = NombreMes(2)
+        Me.chkMarzo.Text = NombreMes(3)
+        Me.chkAbril.Text = NombreMes(4)
+        Me.chkMayo.Text = NombreMes(5)
+        Me.chkJunio.Text = NombreMes(6)
+        Me.chkJulio.Text = NombreMes(7)
+        Me.chkAgosto.Text = NombreMes(8)
+        Me.chkSeptiembre.Text = NombreMes(9)
+        Me.chkOctubre.Text = NombreMes(10)
+        Me.chkNoviembre.Text = NombreMes(11)
+        Me.chkDiciembre.Text = NombreMes(12)
+        Me.chkEnero.Checked = False
+        Me.chkFebrero.Checked = False
+        Me.chkMarzo.Checked = False
+        Me.chkAbril.Checked = False
+        Me.chkMayo.Checked = False
+        Me.chkJunio.Checked = False
+        Me.chkJulio.Checked = False
+        Me.chkAgosto.Checked = False
+        Me.chkSeptiembre.Checked = False
+        Me.chkOctubre.Checked = False
+        Me.chkNoviembre.Checked = False
+        Me.chkDiciembre.Checked = False
+        Me.txtAniosComparar.Text = 0
+        Me.ugData.DataSource = Nothing
+
+    End Sub
+
+
+    Private Sub Validar()
+
+        If Obj.IsNew = True Then Throw New Exception("Seleccione un Período.")
+        If String.IsNullOrEmpty(Me.txtCliente.Text) = True Then Throw New Exception("Seleccione el Cliente")
+        If Me.chkEnero.Checked = False AndAlso Me.chkFebrero.Checked = False AndAlso Me.chkMarzo.Checked = False AndAlso Me.chkAbril.Checked = False AndAlso Me.chkMayo.Checked = False AndAlso Me.chkJunio.Checked = False AndAlso Me.chkAgosto.Checked = False AndAlso Me.chkSeptiembre.Checked = False AndAlso Me.chkOctubre.Checked = False AndAlso Me.chkNoviembre.Checked = False AndAlso Me.chkDiciembre.Checked = False Then Throw New Exception("Seleccione al menos un mes.")
+        If CInt(Me.txtAniosComparar.Text) < 0 Then Throw New Exception("El mes a Comparar no puede ser negativo.")
+        If Me.chkEnero.Checked = True And Obj.Mes1 = True Then Throw New Exception("El Mes de Enero ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkFebrero.Checked = True And Obj.Mes2 = True Then Throw New Exception("El Mes de Febrero ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkMarzo.Checked = True And Obj.Mes3 = True Then Throw New Exception("El Mes de Marzo ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkAbril.Checked = True And Obj.Mes4 = True Then Throw New Exception("El Mes de Abril ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkMayo.Checked = True And Obj.Mes5 = True Then Throw New Exception("El Mes de Mayo ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkJunio.Checked = True And Obj.Mes6 = True Then Throw New Exception("El Mes de Junio ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkJulio.Checked = True And Obj.Mes7 = True Then Throw New Exception("El Mes de Julio ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkAgosto.Checked = True And Obj.Mes8 = True Then Throw New Exception("El Mes de Agosto ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkSeptiembre.Checked = True And Obj.Mes9 = True Then Throw New Exception("El Mes de Septiembre ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkOctubre.Checked = True And Obj.Mes10 = True Then Throw New Exception("El Mes de Octubre ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkNoviembre.Checked = True And Obj.Mes11 = True Then Throw New Exception("El Mes de Noviembre ya se encuentra Cerrado, no se puede modificar.")
+        If Me.chkDiciembre.Checked = True And Obj.Mes12 = True Then Throw New Exception("El Mes de Diciembre ya se encuentra Cerrado, no se puede modificar.")
+        Dim lTableDetalle As DataTable = GetDataTable(String.Format("Select top 1 * From PRO_PeriodoDetalle Where IdPeriodo={0} and IdCliente={1}", Obj.IdPeriodo, Me.txtCliente.Tag), "Datos")
+        If lTableDetalle.Rows.Count = 0 Then Throw New Exception("No se ha ingresado un detalle para actualizar.")
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmEdicionPeriodo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Me.Limpiar()
+
+    End Sub
+
+
+    Private Sub cmdGrabar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdGrabar.ItemClick
+
+        Dim lLlave As Guid = Guid.NewGuid
+
+        Try
+            If Not CheckAccess(gConnectionString, gUsuario, Me.Name, 4) Then
+                If Not CheckAccess(gConnectionString, gUsuario, "", 1) Then
+                    MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+                    Exit Sub
+                End If
+            End If
+
+            Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugData.UpdateData()
+
+            Obj = New PROPeriodoBO(gConnectionString, Me.txtPeriodo.Text)
+            If MessageBox.Show("¿Está seguro(a) de Guardar los Cambios?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+
+            Call Me.Validar()
+            Me.Cursor = Cursors.WaitCursor
+
+            Dim ListD As New List(Of String)
+
+            For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+
+                If Me.chkEnero.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_1", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 1, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_1", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkFebrero.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_2", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 2, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_2", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkMarzo.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_3", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 3, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_3", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkAbril.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_4", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 4, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_4", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkMayo.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_5", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 5, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_5", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkJunio.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_6", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 6, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_6", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkJulio.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_7", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 7, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_7", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkAgosto.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_8", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 8, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_8", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkSeptiembre.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_9", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 9, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_9", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkOctubre.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_10", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 10, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_10", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkNoviembre.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_11", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 11, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_11", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+                If Me.chkDiciembre.Checked = True Then
+                    If CDec(lRow.Cells(String.Format("{0}_12", Obj.IdPeriodo).ToString).Value) < 0 Then Throw New Exception("No pueden haber cantidades Negativas.")
+                    ListD.Add(String.Format("Insert Into TEMP_PRO_PeriodoDetalleActualizacion values ({0},{1},{2},{3},'{4}',{5})", Obj.IdPeriodo, 12, Me.txtCliente.Tag, CInt(lRow.Cells("IdProducto").Value), lLlave, CDec(lRow.Cells(String.Format("{0}_12", Obj.IdPeriodo).ToString).Value)))
+                End If
+
+            Next
+
+            Me.Cursor = Cursors.Default
+            PeriodoBL.ActualizarDetalle(gConnectionString, Obj, ListD, lLlave)
+            MsgBox("Cambios Realizados con Éxito.", MsgBoxStyle.Information, Me.Text)
+            Call Me.Limpiar()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al intentar grabar los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub txtPeriodo_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtPeriodo.EditorButtonClick
+
+        Call Me.Limpiar()
+
+        Dim iDatos As DataTable = GetDataTable("Select IdPeriodo as [Período] From PRO_Periodo Where PeriodoCerrado = 0 and EnviadoProtean = 0 Order By IdPeriodo", "Busqueda")
+        Dim lCodigo As Object = MostrarBuscador("Busqueda", iDatos, "Busqueda")
+
+        If lCodigo IsNot Nothing AndAlso IsNumeric(lCodigo) Then
+            Obj = New PROPeriodoBO(gConnectionString, lCodigo)
+            Me.txtPeriodo.Text = Obj.IdPeriodo
+        End If
+
+    End Sub
+
+
+    Private Sub txtCliente_EditorButtonClick(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtCliente.EditorButtonClick
+
+        If Obj.IsNew = True Then
+            MsgBox("Seleccione el Período Primero.", MsgBoxStyle.Information, Me.Text)
+            Exit Sub
+        End If
+
+        Me.txtCliente.Clear()
+        Me.txtCliente.Tag = Nothing
+        Me.ugData.DataSource = Nothing
+
+        Try
+            frmBuscadorCliente.pFecha = Obj.FechaCreacion
+            frmBuscadorCliente.ShowDialog(Me)
+            If i_LlaveBusqueda IsNot Nothing Then
+                txtCliente.Tag = i_LlaveBusqueda
+                txtCliente.Text = i_LlaveBusqueda
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdFiltrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFiltrar.Click
+
+        Try
+            Me.ugData.DataSource = Nothing
+            Me.ugData.DisplayLayout.Bands(0).Groups.Clear()
+
+            Call Me.Validar()
+
+            Dim lWherePeriodo As String = String.Empty
+            Dim lPeriodoInicial = Obj.IdPeriodo - CInt(Me.txtAniosComparar.Text)
+
+            For i As Integer = lPeriodoInicial To Obj.IdPeriodo
+                If String.IsNullOrEmpty(lWherePeriodo) = True Then
+                    lWherePeriodo = String.Format("Where IdPeriodo in ({0}", i)
+                Else
+                    lWherePeriodo = String.Format("{0},{1}", lWherePeriodo, i)
+                End If
+            Next
+
+            lWherePeriodo = String.Format("{0}) and IdCliente = {1}", lWherePeriodo, Me.txtCliente.Tag)
+
+            'Listado Productos
+            Dim lTableProductos As DataTable = GetDataTableProtean(String.Format("Select distinct T2.RescObjectID as IdProducto,T2.Resc as Recurso From coMarketProfile as T0 inner join coTPAssignment as T1 on T1.ParentObjectID = T0.ObjectID and T1.ParentClassID = 10652 and T1.CollectionID = 1 inner join coRescAssignmen as T2 on T2.ParentObjectID = T0.ObjectID AND T2.ParentClassID = 10652 and T2.CollectionID = 1 Where T0.EffDatesStart <= {3}ts '{0}-{1}-{2} 23:59:59'{4} and T0.EffDatesEnd >= {3}ts '{0}-{1}-{2} 00:00:00'{4} and T1.TPObjectID = {5}", Obj.FechaCreacion.Year, Obj.FechaCreacion.Month.ToString.PadLeft(2, "0"), Obj.FechaCreacion.Day.ToString.PadLeft(2, "0"), "{", "}", Me.txtCliente.Tag), "Datos")
+
+            Dim lTableDetalle As DataTable = GetDataTable(String.Format("Select IdPeriodo as Periodo,Mes,IdProducto,Cantidad From PRO_PeriodoDetalle {0} Order By Periodo,Mes", lWherePeriodo), "Datos")
+
+            'Grupo Producto
+            Dim gProducto As Infragistics.Win.UltraWinGrid.UltraGridGroup
+            gProducto = ugData.DisplayLayout.Bands(0).Groups.Add("gProducto", "Datos Producto")
+            Dim cCodigoProducto As Infragistics.Win.UltraWinGrid.UltraGridColumn
+            cCodigoProducto = ugData.DisplayLayout.Bands(0).Columns.Add("IdProducto")
+            cCodigoProducto.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+            cCodigoProducto.Width = 100
+            cCodigoProducto.Hidden = True
+            Dim cProducto As Infragistics.Win.UltraWinGrid.UltraGridColumn
+            cProducto = ugData.DisplayLayout.Bands(0).Columns.Add("Recurso")
+            cProducto.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+            Me.ugData.DisplayLayout.Bands(0).Groups("gProducto").Columns.Add(cCodigoProducto)
+            Me.ugData.DisplayLayout.Bands(0).Groups("gProducto").Columns.Add(cProducto)
+
+            'DataTable con los Datos Finales
+            Dim lTableFinal As New DataTable
+            lTableFinal.Columns.Add("IdProducto", GetType(Integer))
+            lTableFinal.Columns.Add("Recurso", GetType(String))
+
+            'Grupos Períodos
+            For i As Integer = lPeriodoInicial To Obj.IdPeriodo
+                lTableFinal.Columns.Add(i.ToString, GetType(Integer))
+
+                Dim gPeriodos As New Infragistics.Win.UltraWinGrid.UltraGridGroup
+                gPeriodos.Header.Appearance.TextHAlign = Infragistics.Win.HAlign.Center
+                gPeriodos = ugData.DisplayLayout.Bands(0).Groups.Add(i.ToString)
+
+                If Me.chkEnero.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_1", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 1)
+                End If
+
+                If Me.chkFebrero.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_2", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 2)
+                End If
+
+                If Me.chkMarzo.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_3", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 3)
+                End If
+
+                If Me.chkAbril.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_4", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 4)
+                End If
+
+                If Me.chkMayo.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_5", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 5)
+                End If
+
+                If Me.chkJunio.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_6", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 6)
+                End If
+
+                If Me.chkJulio.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_7", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 7)
+                End If
+
+                If Me.chkAgosto.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_8", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 8)
+                End If
+
+                If Me.chkSeptiembre.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_9", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 9)
+                End If
+
+                If Me.chkOctubre.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_10", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 10)
+                End If
+
+                If Me.chkNoviembre.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_11", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 11)
+                End If
+
+                If Me.chkDiciembre.Checked = True Then
+                    lTableFinal.Columns.Add(String.Format("{0}_12", i.ToString), GetType(Decimal))
+                    Call Me.AgregarColumnaGrupo(i, 12)
+                End If
+            Next
+
+            For Each lRow As DataRow In lTableProductos.Rows
+                Dim lRowData As DataRow = lTableFinal.NewRow
+                lRowData("IdProducto") = lRow("IdProducto")
+                lRowData("Recurso") = lRow("Recurso")
+
+                For i As Integer = lPeriodoInicial To Obj.IdPeriodo
+                    lRowData(i.ToString) = i.ToString
+
+                    If Me.chkEnero.Checked = True Then
+                        lRowData(String.Format("{0}_1", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 1 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkFebrero.Checked = True Then
+                        lRowData(String.Format("{0}_2", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 2 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkMarzo.Checked = True Then
+                        lRowData(String.Format("{0}_3", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 3 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkAbril.Checked = True Then
+                        lRowData(String.Format("{0}_4", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 4 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkMayo.Checked = True Then
+                        lRowData(String.Format("{0}_5", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 5 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkJunio.Checked = True Then
+                        lRowData(String.Format("{0}_6", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 6 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkJulio.Checked = True Then
+                        lRowData(String.Format("{0}_7", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 7 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkAgosto.Checked = True Then
+                        lRowData(String.Format("{0}_8", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 8 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkSeptiembre.Checked = True Then
+                        lRowData(String.Format("{0}_9", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 9 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkOctubre.Checked = True Then
+                        lRowData(String.Format("{0}_10", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 10 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkNoviembre.Checked = True Then
+                        lRowData(String.Format("{0}_11", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 11 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                    If Me.chkDiciembre.Checked = True Then
+                        lRowData(String.Format("{0}_12", i.ToString)) = (From b In lTableDetalle.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto") And b.Field(Of Integer)("Periodo") = i And b.Field(Of Integer)("Mes") = 12 Select b.Field(Of Decimal)("Cantidad")).FirstOrDefault
+                    End If
+
+                Next
+                lTableFinal.Rows.Add(lRowData)
+            Next
+
+            Me.ugData.DataSource = lTableFinal
+            Me.ugData.DataBind()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al intentar cargar los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub ugData_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ugData.KeyPress
+
+        If IsNumeric(e.KeyChar) = False Then e.KeyChar = String.Empty
+
+    End Sub
+
+
+    Private Sub ugData_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ugData.KeyDown
+
+        Select Case e.KeyCode
+            Case Keys.Up
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.AboveCell)
+                e.Handled = True
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.EnterEditMode)
+            Case Keys.Down
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.BelowCell)
+                e.Handled = True
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.EnterEditMode)
+            Case Keys.Right
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.NextCellByTab)
+                e.Handled = True
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.EnterEditMode)
+            Case Keys.Left
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.PrevCellByTab)
+                e.Handled = True
+                Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.EnterEditMode)
+        End Select
+
+    End Sub
+
+End Class

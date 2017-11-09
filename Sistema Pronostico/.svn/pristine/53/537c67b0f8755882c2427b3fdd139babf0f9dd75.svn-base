@@ -1,0 +1,424 @@
+﻿Imports System.Data
+Imports System.Data.OleDb
+
+Module Globales
+
+    Public gUsuario As String
+    Public gServidor As String
+    Public gBaseDatos As String
+    Public gServidorProtean As String
+    Public gBaseDatosProtean As String
+    Public gEjercicio As Integer
+    Public gPeriodo As Integer
+    Public gTaller As String
+    Public SQLVersion As Integer
+    Public gConnectionString As String
+    Public gConnectionStringProtean As String
+    Public ConectionOk As Boolean
+    Public i_LlaveBusqueda As Object
+    Public i_LlaveBusqueda2 As Object
+    Public i_LlaveBusqueda3 As Object
+    Public i_LlaveBusqueda4 As Object
+    Public gEmpresa As Integer
+    Public gGrupoEmpresa As Integer
+    Public gAdministrador As Boolean
+    Public gUserID As Integer
+    Public gMascaraCuenta As String
+    Public gMascaraDistribucion As String
+    Public gBodega As String
+    Public gIdMonedaLocal As Integer
+    Public gMonedaLocal As String
+    Public gIdMonedaPrincipal As Integer
+    Public gMonedaPrincipal As String
+    Public gTasaCambio As Decimal
+    Public gModulo As Integer
+
+    Public gAcceso As Boolean
+    Public gAgregar As Boolean
+    Public gModificar As Boolean
+    Public gEliminar As Boolean
+    Public gExportar As Boolean
+    Public tempZona As Integer = 0
+    Public tempSector As Integer = 0
+    Public tempRegion As Integer = 0
+
+    Public gComentarioCancelacion As String
+
+
+    Public Function ObtenerCampo(ByVal iTabla As String, ByVal iCampo As String, ByVal iWhere As String) As Object
+        Try
+            Dim iConnection As New SqlClient.SqlConnection
+            iConnection.ConnectionString = gConnectionString
+            Dim sSQL As String
+            sSQL = "SELECT " & iCampo & " FROM " & iTabla & " " & iWhere
+            Dim iCommand As New SqlClient.SqlCommand(sSQL, iConnection)
+            Dim iResultado As String
+            iConnection.Open()
+            iResultado = iCommand.ExecuteScalar()
+            iConnection.Close()
+            If Len(Trim(iResultado)) <> 0 Then
+                ObtenerCampo = iResultado
+            Else
+                ObtenerCampo = ""
+            End If
+
+        Catch
+            MsgBox(Err.Number & "-" & Err.Description, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error del sistema...")
+            ObtenerCampo = ""
+        End Try
+    End Function
+
+    Public Function ObtenerCampoProtean(ByVal iTabla As String, ByVal iCampo As String, ByVal iWhere As String) As Object
+        Try
+            Dim iConnection As New SqlClient.SqlConnection
+            iConnection.ConnectionString = gConnectionStringProtean
+            Dim sSQL As String
+            sSQL = "SELECT " & iCampo & " FROM " & iTabla & " " & iWhere
+            Dim iCommand As New SqlClient.SqlCommand(sSQL, iConnection)
+            Dim iResultado As String
+            iConnection.Open()
+            iResultado = iCommand.ExecuteScalar()
+            iConnection.Close()
+            If Len(Trim(iResultado)) <> 0 Then
+                ObtenerCampoProtean = iResultado
+            Else
+                ObtenerCampoProtean = ""
+            End If
+
+        Catch
+            MsgBox(Err.Number & "-" & Err.Description, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error del sistema...")
+            ObtenerCampoProtean = ""
+        End Try
+    End Function
+
+    Public Function ObtenerFechaServer() As DateTime
+        Try
+            Dim iConnection As New SqlClient.SqlConnection
+            iConnection.ConnectionString = gConnectionString
+            Dim sSQL As String
+            sSQL = "SELECT getdate()"
+            Dim iCommand As New SqlClient.SqlCommand(sSQL, iConnection)
+            Dim iResultado As String
+            iConnection.Open()
+            iResultado = iCommand.ExecuteScalar()
+            iConnection.Close()
+            ObtenerFechaServer = iResultado
+        Catch
+            MsgBox(Err.Number & "-" & Err.Description, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error del sistema...")
+        End Try
+    End Function
+
+    Public Function NewID() As String
+        Try
+            Dim iConnection As New SqlClient.SqlConnection
+            iConnection.ConnectionString = gConnectionString
+            Dim sSQL As String
+            sSQL = "select cast(newid() as varchar(60))"
+            Dim iCommand As New SqlClient.SqlCommand(sSQL, iConnection)
+            Dim iResultado As String
+            iConnection.Open()
+            iResultado = iCommand.ExecuteScalar()
+            iConnection.Close()
+            NewID = CStr(iResultado)
+        Catch
+            MsgBox(Err.Number & "-" & Err.Description, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error del sistema...")
+        End Try
+    End Function
+
+    Public Function EjecutarQuery(ByVal iQuery As String) As Boolean
+        Dim iConnection As New SqlClient.SqlConnection
+        iConnection.ConnectionString = gConnectionString
+        Dim iCommand As New SqlClient.SqlCommand(iQuery, iConnection)
+        Dim iResultado As Object
+        iConnection.Open()
+        iResultado = iCommand.ExecuteNonQuery()
+        iConnection.Close()
+        Return True
+    End Function
+
+    Public Function EjecutarQueryProtean(ByVal iQuery As String) As Boolean
+        Dim iConnection As New SqlClient.SqlConnection
+        iConnection.ConnectionString = gConnectionStringProtean
+        Dim iCommand As New SqlClient.SqlCommand(iQuery, iConnection)
+        Dim iResultado As Object
+        iConnection.Open()
+        iResultado = iCommand.ExecuteNonQuery()
+        iConnection.Close()
+        Return True
+    End Function
+
+    Public Function GetDataTable(ByVal iQuery As String, ByVal DataTableName As String) As DataTable
+        Try
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionString)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            iAdapter.Fill(iDataTable)
+            Return (iDataTable)
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex.InnerException)
+        End Try
+    End Function
+
+
+    Public Function GetDataTableProtean(ByVal iQuery As String, ByVal DataTableName As String) As DataTable
+        Try
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionStringProtean)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            iAdapter.Fill(iDataTable)
+            Return (iDataTable)
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex.InnerException)
+        End Try
+    End Function
+
+
+    Public Function GetTableValue(ByVal iQuery As String, ByVal DataTableName As String) As String
+        Try
+            Dim lValor As String = String.Empty
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionString)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            iAdapter.Fill(iDataTable)
+
+            If iDataTable.Rows.Count > 0 Then
+                lValor = iDataTable.Rows(0).Item(0).ToString
+            End If
+
+            Return lValor
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex.InnerException)
+        End Try
+    End Function
+
+    Public Function GetTableValueProtean(ByVal iQuery As String, ByVal DataTableName As String) As String
+        Try
+            Dim lValor As String = String.Empty
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionStringProtean)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            iAdapter.Fill(iDataTable)
+
+            If iDataTable.Rows.Count > 0 Then
+                lValor = iDataTable.Rows(0).Item(0).ToString
+            End If
+
+            Return lValor
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex.InnerException)
+        End Try
+    End Function
+
+    Public Function GetDataTableCommandTimeOut(ByVal iQuery As String, ByVal DataTableName As String, Optional ByVal iTimeOutcommand As Integer = 30) As DataTable
+        Try
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionString)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            If iTimeOutcommand <> 30 Then
+                iAdapter.SelectCommand.CommandTimeout = iTimeOutcommand
+            End If
+            iAdapter.Fill(iDataTable)
+            Return (iDataTable)
+        Catch ex As Exception
+            Throw (New Exception(ex.Message, ex.InnerException))
+        End Try
+    End Function
+
+    Public Function GetDataTableCommandTimeOutProtean(ByVal iQuery As String, ByVal DataTableName As String, Optional ByVal iTimeOutcommand As Integer = 30) As DataTable
+        Try
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionStringProtean)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            If iTimeOutcommand <> 30 Then
+                iAdapter.SelectCommand.CommandTimeout = iTimeOutcommand
+            End If
+            iAdapter.Fill(iDataTable)
+            Return (iDataTable)
+        Catch ex As Exception
+            Throw (New Exception(ex.Message, ex.InnerException))
+        End Try
+    End Function
+
+
+    Public Function MostrarBuscador(ByVal DataTableName As String, ByVal iDataTable As DataTable, ByVal Titulo As String, Optional ByVal pOcultarCero As Boolean = False, Optional ByVal pOcultarUno As Boolean = False, Optional ByVal pOcultarDos As Boolean = False, Optional ByVal pOcultarTres As Boolean = False) As Object
+        Dim iForma As New frmBuscador
+        iForma.Grid.DataSource = (iDataTable)
+        If pOcultarCero = True Then iForma.Grid.Cols(0).Visible = False
+        If pOcultarUno = True Then iForma.Grid.Cols(1).Visible = False
+        If pOcultarDos = True Then iForma.Grid.Cols(2).Visible = False
+        If pOcultarTres = True Then iForma.Grid.Cols(3).Visible = False
+        i_LlaveBusqueda = ""
+        iForma.lblTituloBusqueda.Text = Titulo
+        iForma.Refresh()
+        iForma.ShowDialog()
+        If i_LlaveBusqueda = Nothing Then i_LlaveBusqueda = ""
+        If Len(Trim(i_LlaveBusqueda.ToString)) <> 0 Then
+            Return i_LlaveBusqueda
+        Else
+            Return i_LlaveBusqueda
+        End If
+    End Function
+
+
+    Public Function CheckAccess(ByVal pConnectionString As String, ByVal pUsuario As String, ByVal pOpcion As String, ByVal pAcceso As Integer) As Boolean
+
+        '0 Acceso 1 Agregar 2 Editar 3 Eliminar 4 Ejecutar 5 Imprimir 6 Exportar
+        If gAdministrador = False Then
+            Return Val(BOGeneral.GetDataTable(gConnectionString, "exec sp_SEC_CheckAccess '" & pOpcion & "','" & pUsuario & "'," & pAcceso, "Acceso").Rows(0)("Acceso")) <> 0
+        Else
+            Return True
+        End If
+
+    End Function
+
+    Public Function LetrasExcel(ByVal iColumna As Integer) As String
+
+        Dim iLetras(26) As Char
+        iLetras(0) = "A"
+        iLetras(1) = "B"
+        iLetras(2) = "C"
+        iLetras(3) = "D"
+        iLetras(4) = "E"
+        iLetras(5) = "F"
+        iLetras(6) = "G"
+        iLetras(7) = "H"
+        iLetras(8) = "I"
+        iLetras(9) = "J"
+        iLetras(10) = "K"
+        iLetras(11) = "L"
+        iLetras(12) = "M"
+        iLetras(13) = "N"
+        iLetras(14) = "O"
+        iLetras(15) = "P"
+        iLetras(16) = "Q"
+        iLetras(17) = "R"
+        iLetras(18) = "S"
+        iLetras(19) = "T"
+        iLetras(20) = "U"
+        iLetras(21) = "V"
+        iLetras(22) = "W"
+        iLetras(23) = "X"
+        iLetras(24) = "Y"
+        iLetras(25) = "Z"
+
+        Try
+            Dim l1 As String = ""
+            Dim l2 As String = ""
+            Dim l3 As String = ""
+
+            If iColumna <= 26 Then
+                Return iLetras(iColumna - 1)
+            End If
+
+            Dim iVeces As Integer = 0
+            Dim iAcum As Integer = iColumna
+            While iAcum > 26
+                iAcum = iAcum - 26
+                iVeces = iVeces + 1
+            End While
+
+            If iVeces > 26 Then
+                Dim iAcum2 As Integer = 0
+                Dim iVeces2 As Integer = 0
+                While iVeces > 26
+                    iVeces = iVeces - 26
+                    iVeces2 = iVeces2 + 1
+                End While
+                l1 = iLetras(iVeces2 - 1)
+                l2 = iLetras(iVeces - 1)
+                l3 = iLetras(iAcum - 1)
+            Else
+                l1 = iLetras(iVeces - 1)
+                l2 = iLetras(iAcum - 1)
+            End If
+
+            Dim iResult As String = "" & l1.ToString & "" & l2.ToString & "" & l3.ToString & ""
+
+            Return iResult
+
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
+    End Function
+
+    Public Function NoNull(ByVal iValor As Object) As Object
+        If iValor Is System.DBNull.Value Then
+            Return ""
+        Else
+            Return iValor
+        End If
+    End Function
+    Public Function NombreMes(ByVal iMes As Integer) As String
+        Select Case iMes
+            Case 1 : NombreMes = "Enero"
+            Case 2 : NombreMes = "Febrero"
+            Case 3 : NombreMes = "Marzo"
+            Case 4 : NombreMes = "Abril"
+            Case 5 : NombreMes = "Mayo"
+            Case 6 : NombreMes = "Junio"
+            Case 7 : NombreMes = "Julio"
+            Case 8 : NombreMes = "Agosto"
+            Case 9 : NombreMes = "Septiembre"
+            Case 10 : NombreMes = "Octubre"
+            Case 11 : NombreMes = "Noviembre"
+            Case 12 : NombreMes = "Diciembre"
+        End Select
+    End Function
+
+    Public Function ObtenerImagen(ByVal iCampo1 As String, ByVal iCampo2 As String, ByVal DataTableName As String) As DataTable
+        Dim iImagen As Byte()
+
+        Try
+            Dim iQuery As String
+            iQuery = String.Format("select 1 as {0}, {1} from ADM_Empresa where IdGrupoEmpresa = {2} and IdEmpresa = {3}", iCampo1, iCampo2, gGrupoEmpresa, gEmpresa)
+            Dim iAdapter As New SqlClient.SqlDataAdapter(iQuery, gConnectionString)
+            Dim iDataTable As DataTable = New DataTable(DataTableName)
+            iAdapter.Fill(iDataTable)
+
+            If iDataTable.Rows.Count = 0 Then
+                iQuery = String.Format("select 1 as {0}, {1} from ADM_ParametroGeneral", iCampo1, iCampo2)
+                Dim iAdapterEmpresa As New SqlClient.SqlDataAdapter(iQuery, gConnectionString)
+                Dim iDataTableEmpresa As DataTable = New DataTable(DataTableName)
+                iAdapterEmpresa.Fill(iDataTableEmpresa)
+                Return (iDataTableEmpresa)
+            Else
+                For Each Imagen As DataRow In iDataTable.Rows
+                    If Not IsNothing(Imagen(iCampo2)) Then
+
+                        iImagen = Imagen(iCampo2)
+                        If iImagen.Length = 0 Then
+                            iQuery = String.Format("select 1 as {0}, {1} from CON_ParametroGrupoEmpresa where IdGrupoEmpresa = {2}", iCampo1, iCampo2, gGrupoEmpresa)
+                            Dim iAdapterEmpresa As New SqlClient.SqlDataAdapter(iQuery, gConnectionString)
+                            Dim iDataTableEmpresa As DataTable = New DataTable(DataTableName)
+                            iAdapterEmpresa.Fill(iDataTableEmpresa)
+                            Return (iDataTableEmpresa)
+                        Else
+                            Return (iDataTable)
+                        End If
+
+                    Else
+
+                    End If
+                Next
+            End If
+
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex.InnerException)
+        End Try
+    End Function
+
+
+    Public Sub ExportarExcel(ByRef Grid As Infragistics.Win.UltraWinGrid.UltraGrid)
+        Dim SaveDlg As New SaveFileDialog
+        SaveDlg.CheckPathExists = True
+        SaveDlg.DefaultExt = "Excel WorkBook (*.xls)"
+        SaveDlg.Filter = "Excel WorkBook (*.xls)|*.xls"
+        SaveDlg.OverwritePrompt = True
+        If SaveDlg.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Dim UGE As New Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter
+            UGE.Export(Grid, SaveDlg.FileName)
+        End If
+    End Sub
+
+
+
+
+
+
+End Module

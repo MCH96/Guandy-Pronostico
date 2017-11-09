@@ -1,0 +1,190 @@
+﻿Public Class frmPeriodo
+
+    Dim Obj As PROPeriodoBO
+
+
+    Private Sub Validar()
+
+        If String.IsNullOrEmpty(txtNombreFormula.Text) Then Throw New Exception("Ingrese Nombre")
+
+    End Sub
+
+
+    Private Sub LockControls()
+
+        txtNombreFormula.Enabled = False
+        txtcodigo.Enabled = False
+
+    End Sub
+
+
+    Private Sub UnlockControls()
+
+        txtcodigo.Enabled = True
+        txtNombreFormula.Enabled = True
+
+    End Sub
+
+
+    Private Sub limpiar()
+
+        Obj = New PROPeriodoBO
+        Me.txtNombreFormula.Text = ""
+        Me.txtcodigo.Text = ""
+
+    End Sub
+
+
+    Private Sub LockToolBar()
+
+        cmdGrabar.Enabled = True
+        cmdNuevo.Enabled = False
+        cmdEliminar.Enabled = False
+        cmdEditar.Enabled = False
+        cmdBuscar.Enabled = False
+
+    End Sub
+
+
+    Private Sub UnLockBar()
+
+        cmdGrabar.Enabled = False
+        cmdNuevo.Enabled = True
+        cmdEliminar.Enabled = True
+        cmdEditar.Enabled = True
+        cmdBuscar.Enabled = True
+
+    End Sub
+
+
+    Private Sub LoadData()
+
+        Try
+
+
+
+        Catch ex As Exception
+            MsgBox("Error al intentar obtener los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmFormula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        limpiar()
+        LockControls()
+        UnLockBar()
+
+    End Sub
+
+
+    Private Sub cmdGrabar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdGrabar.ItemClick
+
+        Try
+            Call Me.Validar()
+            Me.Cursor = Cursors.WaitCursor
+
+            If Obj.IsNew = True Then
+                Obj.CreadoPor = gUsuario
+                Obj.FechaCreacion = Now
+            End If
+
+            Obj.Save(gConnectionString)
+
+            Me.Cursor = Cursors.Default
+
+            LockControls()
+            UnLockBar()
+            limpiar()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al intentar grabar los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdNuevo_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdNuevo.ItemClick
+
+        If Not CheckAccessGlobal(gConnectionString, gUsuario, Me.Name, 1) Then
+            MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+            Exit Sub
+        End If
+
+        limpiar()
+        UnlockControls()
+        LockToolBar()
+
+    End Sub
+
+
+    Private Sub cmdEditar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdEditar.ItemClick
+
+        If Not CheckAccessGlobal(gConnectionString, gUsuario, Me.Name, 2) Then
+            MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+            Exit Sub
+        End If
+
+        If Obj.IsNew = False Then
+            UnlockControls()
+            LockToolBar()
+            Me.txtcodigo.Enabled = False
+        End If
+
+    End Sub
+
+
+    Private Sub cmdEliminar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdEliminar.ItemClick
+
+        If Not CheckAccessGlobal(gConnectionString, gUsuario, Me.Name, 3) Then
+            MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+            Exit Sub
+        End If
+
+        If Obj.IsNew = False Then
+            If MsgBox("Está seguro de querer eliminar el registro seleccionado?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, Me.Text) = MsgBoxResult.No Then
+                Exit Sub
+            End If
+
+            Obj.Delete(gConnectionString)
+
+            limpiar()
+            LockControls()
+            UnLockBar()
+        End If
+
+    End Sub
+
+
+    Private Sub cmdCancelar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCancelar.ItemClick
+
+        limpiar()
+        LockControls()
+        UnLockBar()
+
+    End Sub
+
+
+    Private Sub cmdBuscar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdBuscar.ItemClick
+
+        Call Me.limpiar()
+
+        Dim iDatos As DataTable = GetDataTable("Select CodigoFormula [Código], NombreFormula  [Nombre de la Fórmula] from ETI_Formula", "Busqueda")
+        Dim lCodigo As Object = MostrarBuscador("Busqueda", iDatos, "Busqueda")
+
+        If lCodigo IsNot Nothing Then
+            Obj = New PROPeriodoBO(gConnectionString, lCodigo)
+            LoadData()
+        End If
+
+    End Sub
+End Class

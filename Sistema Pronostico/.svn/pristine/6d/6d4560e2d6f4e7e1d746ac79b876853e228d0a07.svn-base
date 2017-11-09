@@ -1,0 +1,365 @@
+﻿Public Class frmPeriodoVendedorVarios
+
+    Dim Obj As PROPeriodoBO
+
+
+    Private Sub Validar()
+
+        If Me.ugData.Rows(0).Cells("Cerrado").Value = False Then
+            If Obj.Mes1 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Enero no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(1).Cells("Cerrado").Value = False Then
+            If Obj.Mes2 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Febrero no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(2).Cells("Cerrado").Value = False Then
+            If Obj.Mes3 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Marzo no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(3).Cells("Cerrado").Value = False Then
+            If Obj.Mes4 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Abril no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(4).Cells("Cerrado").Value = False Then
+            If Obj.Mes5 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Mayo no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(5).Cells("Cerrado").Value = False Then
+            If Obj.Mes6 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Junio no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(6).Cells("Cerrado").Value = False Then
+            If Obj.Mes7 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Julio no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(7).Cells("Cerrado").Value = False Then
+            If Obj.Mes8 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Agosto no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(8).Cells("Cerrado").Value = False Then
+            If Obj.Mes9 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Septiembre no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(9).Cells("Cerrado").Value = False Then
+            If Obj.Mes10 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Octubre no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(10).Cells("Cerrado").Value = False Then
+            If Obj.Mes11 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Noviembre no se puede aperturar.")
+        End If
+
+        If Me.ugData.Rows(11).Cells("Cerrado").Value = False Then
+            If Obj.Mes12 = True Then Throw New Exception("El Período ya se encuentra cerrado en el mes de Diciembre no se puede aperturar.")
+        End If
+
+        For i As Integer = 1 To 11
+            If Me.ugData.Rows(i).Cells("Cerrado").Value = True Then
+                If Me.ugData.Rows(i - 1).Cells("Cerrado").Value = False Then Throw New Exception(String.Format("El Mes de {0} no se puede cerrar porque el mes anterior no se encuentra Cerrado.", Me.ugData.Rows(i).Cells("Mes").Value))
+            Else
+                If i < 11 Then
+                    If Me.ugData.Rows(i + 1).Cells("Cerrado").Value = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes siguiente se encuentra Cerrado.", Me.ugData.Rows(i).Cells("Mes").Value))
+                End If
+            End If
+        Next
+
+    End Sub
+
+
+    Private Sub CargarGrid()
+
+        Me.udsData.Rows.Clear()
+
+        Dim lTable As New DataTable("Datos")
+
+        For i As Integer = 1 To 12
+            Dim lFila As Infragistics.Win.UltraWinDataSource.UltraDataRow = Me.udsData.Rows.Add
+            lFila.SetCellValue("IdMes", i)
+            lFila.SetCellValue("Mes", NombreMes(i))
+            lFila.SetCellValue("Cerrado", False)
+        Next
+
+    End Sub
+
+
+    Private Sub CargarVendedores()
+
+        Me.ugVendedores.DataSource = Me.udsVendedores
+
+        Dim lTableVendedores As New DataTable
+        lTableVendedores.Columns.Add("Seleccionar", GetType(Boolean))
+        lTableVendedores.Columns.Add("Código", GetType(String))
+        lTableVendedores.Columns.Add("Vendedor", GetType(String))
+
+        Dim iDatos As DataTable = GetDataTableProtean("Select distinct Vendedor as Código, Nombre_Vendedor as Vendedor From view_Cubo_SocioxVendedor Order By Vendedor", "Datos")
+
+        Dim ListObjPV As List(Of PROPeriodoVendedorBO) = PROPeriodoVendedorBO.GetAllFiltro(gConnectionString, String.Format("Where IdPeriodo = {0}", Me.txtPeriodo.Text))
+        For Each ObjPV As PROPeriodoVendedorBO In ListObjPV
+            Dim lRow As DataRow = lTableVendedores.NewRow
+            lRow("Seleccionar") = False
+            lRow("Código") = ObjPV.Vendedor
+            lRow("Vendedor") = (From b In iDatos.AsEnumerable Where b.Field(Of String)("Código") = ObjPV.Vendedor Select b.Field(Of String)("Vendedor")).FirstOrDefault
+            lTableVendedores.Rows.Add(lRow)
+        Next
+
+        Me.ugVendedores.DataSource = lTableVendedores
+        Me.ugVendedores.DataBind()
+
+    End Sub
+
+
+    Private Sub Limpiar()
+
+        Obj = New PROPeriodoBO
+        Me.txtPeriodo.Text = String.Empty
+        Me.ugVendedores.DataSource = Me.udsVendedores
+        Me.udsData.Rows.Clear()
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmPeriodoVendedorVarios_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Me.Limpiar()
+
+    End Sub
+
+
+    Private Sub txtPeriodo_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtPeriodo.EditorButtonClick
+
+        Try
+
+            Call Me.Limpiar()
+
+            Dim iDatos As DataTable = GetDataTable("Select IdPeriodo as [Período] From PRO_Periodo Where PeriodoCerrado = 0 Order By IdPeriodo", "Busqueda")
+            Dim lCodigo As Object = MostrarBuscador("Busqueda", iDatos, "Busqueda")
+
+            If lCodigo IsNot Nothing AndAlso IsNumeric(lCodigo) Then
+                Obj = New PROPeriodoBO(gConnectionString, CInt(lCodigo))
+                Me.txtPeriodo.Text = lCodigo
+                Call Me.CargarVendedores()
+                Call Me.CargarGrid()
+            End If
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdGrabar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdGrabar.ItemClick
+
+        Try
+            Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugData.UpdateData()
+
+            Me.ugVendedores.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugVendedores.UpdateData()
+
+            Call Me.Validar()
+
+            Dim ListObjPV As New List(Of PROPeriodoVendedorBO)
+
+            Dim lBandera As Boolean = False
+            For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+                If lRow.Cells("Cerrado").Value = False Then lBandera = True
+            Next
+
+            If lBandera = True Then
+                frmPopUpComentario.pObligatorio = True
+                frmPopUpComentario.ShowDialog(Me)
+                If i_LlaveBusqueda = Nothing Then Exit Sub
+            Else
+                i_LlaveBusqueda = Nothing
+                i_LlaveBusqueda = String.Empty
+            End If
+
+            For Each lRowVendedor As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+                If lRowVendedor.Cells("Seleccionar").Value = True Then
+                    Dim ObjPV As New PROPeriodoVendedorBO(gConnectionString, Me.txtPeriodo.Text, lRowVendedor.Cells("Código").Value.ToString)
+                    ObjPV.Mes1 = Me.ugData.Rows(0).Cells("Cerrado").Value
+                    ObjPV.Mes2 = Me.ugData.Rows(1).Cells("Cerrado").Value
+                    ObjPV.Mes3 = Me.ugData.Rows(2).Cells("Cerrado").Value
+                    ObjPV.Mes4 = Me.ugData.Rows(3).Cells("Cerrado").Value
+                    ObjPV.Mes5 = Me.ugData.Rows(4).Cells("Cerrado").Value
+                    ObjPV.Mes6 = Me.ugData.Rows(5).Cells("Cerrado").Value
+                    ObjPV.Mes7 = Me.ugData.Rows(6).Cells("Cerrado").Value
+                    ObjPV.Mes8 = Me.ugData.Rows(7).Cells("Cerrado").Value
+                    ObjPV.Mes9 = Me.ugData.Rows(8).Cells("Cerrado").Value
+                    ObjPV.Mes10 = Me.ugData.Rows(9).Cells("Cerrado").Value
+                    ObjPV.Mes11 = Me.ugData.Rows(10).Cells("Cerrado").Value
+                    ObjPV.Mes12 = Me.ugData.Rows(11).Cells("Cerrado").Value
+
+                    If ObjPV.Mes1 = True Then
+                        ObjPV.Mes1CerradoPor = gUsuario
+                        ObjPV.Mes1FechaCierre = Now
+                    Else
+                        ObjPV.Mes1CerradoPor = Nothing
+                        ObjPV.Mes1FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes2 = True Then
+                        ObjPV.Mes2CerradoPor = gUsuario
+                        ObjPV.Mes2FechaCierre = Now
+                    Else
+                        ObjPV.Mes2CerradoPor = Nothing
+                        ObjPV.Mes2FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes3 = True Then
+                        ObjPV.Mes3CerradoPor = gUsuario
+                        ObjPV.Mes3FechaCierre = Now
+                    Else
+                        ObjPV.Mes3CerradoPor = Nothing
+                        ObjPV.Mes3FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes4 = True Then
+                        ObjPV.Mes4CerradoPor = gUsuario
+                        ObjPV.Mes4FechaCierre = Now
+                    Else
+                        ObjPV.Mes4CerradoPor = Nothing
+                        ObjPV.Mes4FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes5 = True Then
+                        ObjPV.Mes5CerradoPor = gUsuario
+                        ObjPV.Mes5FechaCierre = Now
+                    Else
+                        ObjPV.Mes5CerradoPor = Nothing
+                        ObjPV.Mes5FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes6 = True Then
+                        ObjPV.Mes6CerradoPor = gUsuario
+                        ObjPV.Mes6FechaCierre = Now
+                    Else
+                        ObjPV.Mes6CerradoPor = Nothing
+                        ObjPV.Mes6FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes7 = True Then
+                        ObjPV.Mes7CerradoPor = gUsuario
+                        ObjPV.Mes7FechaCierre = Now
+                    Else
+                        ObjPV.Mes7CerradoPor = Nothing
+                        ObjPV.Mes7FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes8 = True Then
+                        ObjPV.Mes8CerradoPor = gUsuario
+                        ObjPV.Mes8FechaCierre = Now
+                    Else
+                        ObjPV.Mes8CerradoPor = Nothing
+                        ObjPV.Mes8FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes9 = True Then
+                        ObjPV.Mes9CerradoPor = gUsuario
+                        ObjPV.Mes9FechaCierre = Now
+                    Else
+                        ObjPV.Mes9CerradoPor = Nothing
+                        ObjPV.Mes9FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes10 = True Then
+                        ObjPV.Mes10CerradoPor = gUsuario
+                        ObjPV.Mes10FechaCierre = Now
+                    Else
+                        ObjPV.Mes10CerradoPor = Nothing
+                        ObjPV.Mes10FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes11 = True Then
+                        ObjPV.Mes11CerradoPor = gUsuario
+                        ObjPV.Mes11FechaCierre = Now
+                    Else
+                        ObjPV.Mes11CerradoPor = Nothing
+                        ObjPV.Mes11FechaCierre = Nothing
+                    End If
+
+                    If ObjPV.Mes12 = True Then
+                        ObjPV.Mes12CerradoPor = gUsuario
+                        ObjPV.Mes12FechaCierre = Now
+                    Else
+                        ObjPV.Mes12CerradoPor = Nothing
+                        ObjPV.Mes12FechaCierre = Nothing
+                    End If
+
+                    ListObjPV.Add(ObjPV)
+                End If
+            Next
+
+            PeriodoBL.GrabarPeriodoVendedorVarios(gConnectionString, ListObjPV, gUsuario, i_LlaveBusqueda.ToString)
+            MsgBox("Cambios realizados con Éxito.", MsgBoxStyle.Information, Me.Text)
+            Call Me.Limpiar()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub ugVendedores_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ugVendedores.KeyPress
+
+        If Me.ugVendedores.ActiveCell Is Nothing Then Exit Sub
+        If Me.ugVendedores.ActiveCell.Column.Key <> "Seleccionar" Then e.KeyChar = String.Empty
+
+    End Sub
+
+
+    Private Sub ugData_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ugData.KeyPress
+
+        If Me.ugData.ActiveCell Is Nothing Then Exit Sub
+        If Me.ugData.ActiveCell.Column.Key <> "Seleccionar" Then e.KeyChar = String.Empty
+
+    End Sub
+
+
+    Private Sub cmdSeleccionarTodosV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSeleccionarTodosV.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+            lRow.Cells("Seleccionar").Value = True
+        Next
+
+    End Sub
+
+
+    Private Sub cmdDeseleccionarTodosV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDeseleccionarTodosV.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+            lRow.Cells("Seleccionar").Value = False
+        Next
+
+    End Sub
+
+
+    Private Sub cmdSeleccionarTodos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSeleccionarTodos.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+            lRow.Cells("Cerrado").Value = True
+        Next
+
+    End Sub
+
+
+    Private Sub cmdDeseleccionarTodos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDeseleccionarTodos.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+            lRow.Cells("Cerrado").Value = False
+        Next
+
+    End Sub
+
+End Class

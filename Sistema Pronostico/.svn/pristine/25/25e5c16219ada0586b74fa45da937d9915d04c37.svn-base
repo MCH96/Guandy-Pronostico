@@ -1,0 +1,306 @@
+﻿Public Class frmMantenimientoPerfilMercado
+
+
+    Dim lIdPeticionSocio As Nullable(Of Long)
+    Dim lIdPeticionRecurso As Nullable(Of Long)
+
+
+    Private Sub LockControls(ByVal pLock As Boolean)
+
+        Me.ugRecurso.Enabled = pLock
+        Me.ugSocio.Enabled = pLock
+        Me.lnkAgregarRecurso.Enabled = pLock
+        Me.lnkAgregarSocio.Enabled = pLock
+        Me.txtPerfilMercado.Enabled = pLock
+
+    End Sub
+
+
+    Private Sub CargarSocios()
+
+        Me.ugSocio.DataSource = GetDataTableProtean(String.Format("Select t1.TPObjectID as IdSocio,T1.TP as Codigo,t4.Nombre_Socio_Negocio as Socio,'Eliminar' as Eliminar From coMarketProfile T0 inner join coTPAssignment T1 on T1.ParentObjectID = T0.ObjectID and T1.ParentClassID = 10652 and T1.CollectionID = 1 inner join view_Cubo_SocioxPais t4 on t1.TPObjectID=t4.ObjectID_Socio_Negcio Where T0.ObjectID = {0}", Me.txtPerfilMercado.Tag), "Datos")
+        Me.ugSocio.DataBind()
+
+        Me.ugSocio.DisplayLayout.Bands(0).Columns("Eliminar").Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
+
+    End Sub
+
+
+    Private Sub CargarRecursos()
+
+        Me.ugRecurso.DataSource = GetDataTableProtean(String.Format("Select t2.RescObjectID as IdRecurso,T2.Resc as Codigo, t6.Description as Recurso,'Eliminar' as Eliminar From coMarketProfile T0 inner join coRescAssignmen T2 on T2.ParentObjectID = T0.ObjectID and T2.ParentClassID = 10652 and T2.CollectionID = 1 inner join fdBasResc t6 on t2.RescObjectID=t6.ObjectID Where T0.ObjectID = {0}", Me.txtPerfilMercado.Tag), "Datos")
+        Me.ugRecurso.DataBind()
+
+        Me.ugRecurso.DisplayLayout.Bands(0).Columns("Eliminar").Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
+
+    End Sub
+
+
+    Private Sub ValidarSocio(ByVal pIdSocio As Integer)
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugSocio.Rows
+            If CInt(lRow.Cells("IdSocio").Value) = pIdSocio Then Throw New Exception("Socio ya Ingresado.")
+        Next
+
+    End Sub
+
+
+    Private Sub ValidarRecurso(ByVal pIdRecurso As Integer)
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugRecurso.Rows
+            If CInt(lRow.Cells("IdRecurso").Value) = pIdRecurso Then Throw New Exception("Recurso ya Ingresado.")
+        Next
+
+    End Sub
+
+
+
+    Private Sub Limpiar()
+
+        lIdPeticionSocio = Nothing
+        lIdPeticionRecurso = Nothing
+        Me.txtPerfilMercado.Tag = Nothing
+        Me.txtPerfilMercado.Text = String.Empty
+        Me.ugSocio.DataSource = Me.udsSocio
+        Me.ugRecurso.DataSource = Me.udsRecurso
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmMantenimientoPerfilMercadoPorSocio_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Me.Limpiar()
+        Call Me.LockControls(True)
+
+    End Sub
+
+
+    Private Sub cmdCancelar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs)
+
+        Call Me.Limpiar()
+
+    End Sub
+
+
+    Private Sub lnkAgregarSocio_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkAgregarSocio.LinkClicked
+
+        If Me.txtPerfilMercado.Tag Is Nothing Then
+            MsgBox("Seleccione el Perfil de Mercado Primero.", MsgBoxStyle.Information, Me.Text)
+            Exit Sub
+        End If
+
+        Try
+
+            frmBuscadorCliente.ShowDialog(Me)
+            If i_LlaveBusqueda IsNot Nothing AndAlso IsNumeric(i_LlaveBusqueda) = True Then
+                Call Me.ValidarSocio(CInt(i_LlaveBusqueda))
+
+                Dim ObjP As New PETPerfileSocioBO
+                ObjP.IdPeticion = PETPerfileSocioBO.MaxID(gConnectionString)
+                ObjP.IdPerfil = Me.txtPerfilMercado.Tag
+                ObjP.IdSocio = CInt(i_LlaveBusqueda)
+                ObjP.Ingresar = True
+                ObjP.Validado = True
+                ObjP.FechaCreacion = Now
+                ObjP.CreadoPor = gUsuario
+                ObjP.Save(gConnectionString)
+
+                lIdPeticionSocio = ObjP.IdPeticion
+
+                Me.Timer1.Enabled = True
+                Call Me.LockControls(False)
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+
+    End Sub
+
+
+    Private Sub lnkAgregarRecurso_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkAgregarRecurso.LinkClicked
+
+        If Me.txtPerfilMercado.Tag Is Nothing Then
+            MsgBox("Seleccione el Perfil de Mercado Primero.", MsgBoxStyle.Information, Me.Text)
+            Exit Sub
+        End If
+
+        Try
+
+            frmBuscadorRecurso.ShowDialog(Me)
+            If i_LlaveBusqueda IsNot Nothing AndAlso IsNumeric(i_LlaveBusqueda) = True Then
+                Call Me.ValidarRecurso(CInt(i_LlaveBusqueda))
+
+                Dim ObjP As New PETPerfileRecursoBO
+                ObjP.IdPeticion = PETPerfileRecursoBO.MaxID(gConnectionString)
+                ObjP.IdPerfil = Me.txtPerfilMercado.Tag
+                ObjP.IdRecurso = CInt(i_LlaveBusqueda)
+                ObjP.Ingresar = True
+                ObjP.Validado = True
+                ObjP.FechaCreacion = Now
+                ObjP.CreadoPor = gUsuario
+                ObjP.Save(gConnectionString)
+
+                lIdPeticionRecurso = ObjP.IdPeticion
+
+                Me.Timer1.Enabled = True
+                Call Me.LockControls(False)
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+
+    End Sub
+
+
+    Private Sub txtPerfilMercado_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtPerfilMercado.EditorButtonClick
+
+        Call Me.Limpiar()
+
+        Try
+
+            frmBuscadorPerfilMercado.ShowDialog(Me)
+            If i_LlaveBusqueda IsNot Nothing AndAlso IsNumeric(i_LlaveBusqueda) = True Then
+                Me.txtPerfilMercado.Tag = i_LlaveBusqueda
+                Me.txtPerfilMercado.Text = String.Format("{0} - {1}", i_LlaveBusqueda2.ToString, i_LlaveBusqueda3.ToString)
+                Call Me.CargarRecursos()
+                Call Me.CargarSocios()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+
+    End Sub
+
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+
+        If lIdPeticionSocio.HasValue = True Then
+
+            Dim ObjP As New PETPerfileSocioBO(gConnectionString, lIdPeticionSocio.Value)
+
+            If ObjP.IsNew = False Then
+
+                If ObjP.Operado.HasValue = True AndAlso ObjP.Operado.Value = True Then
+                    If ObjP.Ingresar = True Then
+                        MsgBox("Solicitud de Ingreso de Socio Operada con Éxito.", MsgBoxStyle.Information, Me.Text)
+                    Else
+                        MsgBox("Solicitud para Eliminar de Socio Operada con Éxito.", MsgBoxStyle.Information, Me.Text)
+                    End If
+
+                    Me.Timer1.Enabled = False
+                    Call Me.CargarSocios()
+                    Call Me.LockControls(True)
+                    lIdPeticionSocio = Nothing
+
+                ElseIf ObjP.OperadoError.HasValue = True AndAlso ObjP.OperadoError.Value = True Then
+                    If ObjP.Ingresar = True Then
+                        MsgBox("Error al Procesar la Solicitud de Ingreso del Socio.", MsgBoxStyle.Exclamation, Me.Text)
+                    Else
+                        MsgBox("Error al Procesar la Solicitud para Eliminar el Socio.", MsgBoxStyle.Exclamation, Me.Text)
+                    End If
+
+                    Me.Timer1.Enabled = False
+                    Call Me.CargarSocios()
+                    Call Me.LockControls(True)
+                    lIdPeticionSocio = Nothing
+
+                End If
+
+            End If
+
+        ElseIf lIdPeticionRecurso.HasValue = True Then
+
+            Dim ObjP As New PETPerfileRecursoBO(gConnectionString, lIdPeticionRecurso.Value)
+
+            If ObjP.IsNew = False Then
+
+                If ObjP.Operado.HasValue = True AndAlso ObjP.Operado.Value = True Then
+                    If ObjP.Ingresar = True Then
+                        MsgBox("Solicitud de Ingreso de Recurso Operada con Éxito.", MsgBoxStyle.Information, Me.Text)
+                    Else
+                        MsgBox("Solicitud para Eliminar de Recurso Operada con Éxito.", MsgBoxStyle.Information, Me.Text)
+                    End If
+
+                    Me.Timer1.Enabled = False
+                    Call Me.CargarRecursos()
+                    Call Me.LockControls(True)
+                    lIdPeticionRecurso = Nothing
+
+                ElseIf ObjP.OperadoError.HasValue = True AndAlso ObjP.OperadoError.Value = True Then
+                    If ObjP.Ingresar = True Then
+                        MsgBox("Error al Procesar la Solicitud de Ingreso del Recurso.", MsgBoxStyle.Exclamation, Me.Text)
+                    Else
+                        MsgBox("Error al Procesar la Solicitud para Eliminar el Recurso.", MsgBoxStyle.Exclamation, Me.Text)
+                    End If
+
+                    Me.Timer1.Enabled = False
+                    Call Me.CargarRecursos()
+                    Call Me.LockControls(True)
+                    lIdPeticionRecurso = Nothing
+
+                End If
+
+            End If
+
+        End If
+
+    End Sub
+
+
+    Private Sub ugSocio_ClickCellButton(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.CellEventArgs) Handles ugSocio.ClickCellButton
+
+        If MessageBox.Show("¿Está seguro(a) de Eliminar el Registro Seleccionado?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+
+        Dim ObjP As New PETPerfileSocioBO
+        ObjP.IdPeticion = PETPerfileSocioBO.MaxID(gConnectionString)
+        ObjP.IdPerfil = Me.txtPerfilMercado.Tag
+        ObjP.IdSocio = CInt(e.Cell.Row.Cells("IdSocio").Value)
+        ObjP.Ingresar = False
+        ObjP.Validado = True
+        ObjP.FechaCreacion = Now
+        ObjP.CreadoPor = gUsuario
+        ObjP.Save(gConnectionString)
+
+        lIdPeticionSocio = ObjP.IdPeticion
+
+        Me.Timer1.Start()
+        Call Me.LockControls(False)
+
+    End Sub
+
+
+    Private Sub ugRecurso_ClickCellButton(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.CellEventArgs) Handles ugRecurso.ClickCellButton
+
+        If MessageBox.Show("¿Está seguro(a) de Eliminar el Registro Seleccionado?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+
+        Dim ObjP As New PETPerfileRecursoBO
+        ObjP.IdPeticion = PETPerfileRecursoBO.MaxID(gConnectionString)
+        ObjP.IdPerfil = Me.txtPerfilMercado.Tag
+        ObjP.IdRecurso = CInt(e.Cell.Row.Cells("IdRecurso").Value)
+        ObjP.Ingresar = False
+        ObjP.Validado = True
+        ObjP.FechaCreacion = Now
+        ObjP.CreadoPor = gUsuario
+        ObjP.Save(gConnectionString)
+
+        lIdPeticionRecurso = ObjP.IdPeticion
+
+        Me.Timer1.Start()
+        Call Me.LockControls(False)
+
+    End Sub
+
+
+End Class

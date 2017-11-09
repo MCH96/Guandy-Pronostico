@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDocumentoProducto" targetNamespace="http://tempuri.org/DSDocumentoProducto.xsd" xmlns:mstns="http://tempuri.org/DSDocumentoProducto.xsd" xmlns="http://tempuri.org/DSDocumentoProducto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDocumentoProducto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DSDocumentoProducto" msprop:Generator_UserDSName="DSDocumentoProducto" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DocumentoProducto" msprop:Generator_UserTableName="DocumentoProducto" msprop:Generator_RowDeletedName="DocumentoProductoRowDeleted" msprop:Generator_TableClassName="DocumentoProductoDataTable" msprop:Generator_RowChangedName="DocumentoProductoRowChanged" msprop:Generator_RowClassName="DocumentoProductoRow" msprop:Generator_RowChangingName="DocumentoProductoRowChanging" msprop:Generator_RowEvArgName="DocumentoProductoRowChangeEvent" msprop:Generator_RowEvHandlerName="DocumentoProductoRowChangeEventHandler" msprop:Generator_TablePropName="DocumentoProducto" msprop:Generator_TableVarName="tableDocumentoProducto" msprop:Generator_RowDeletingName="DocumentoProductoRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Recurso" msprop:Generator_UserColumnName="Recurso" msprop:Generator_ColumnPropNameInRow="Recurso" msprop:Generator_ColumnVarNameInTable="columnRecurso" msprop:Generator_ColumnPropNameInTable="RecursoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaEmision" msprop:Generator_UserColumnName="FechaEmision" msprop:Generator_ColumnPropNameInRow="FechaEmision" msprop:Generator_ColumnVarNameInTable="columnFechaEmision" msprop:Generator_ColumnPropNameInTable="FechaEmisionColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Observacion" msprop:Generator_UserColumnName="Observacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

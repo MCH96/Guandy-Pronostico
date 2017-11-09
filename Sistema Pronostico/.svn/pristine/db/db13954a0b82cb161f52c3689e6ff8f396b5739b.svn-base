@@ -1,0 +1,174 @@
+﻿Public Class frmPeriodoVendedorDetalle
+
+
+    Dim Obj As PROPeriodoBO
+    Dim ObjV As PROPeriodoVendedorBO
+    Dim lCliente As String
+
+
+    Private Sub Limpiar()
+
+        Obj = New PROPeriodoBO
+        ObjV = New PROPeriodoVendedorBO
+        lCliente = String.Empty
+        Me.dtpPeriodo.Value = Now.Date
+        Me.udsData.Rows.Clear()
+
+    End Sub
+
+
+    Private Sub CargarGrid()
+
+        Try
+
+            Dim lTable As DataTable = GetDataTable(String.Format("Select IdProducto From PRO_PeriodoVendedorDetalle Where IdPeriodo = {0} and IdCliente = {1}", Me.dtpPeriodo.Value.Year, lCliente), "Datos")
+
+            Dim lTableProductos As DataTable = GetDataTableProtean(String.Format("Select distinct T2.RescObjectID as IdProducto,T2.Resc as Codigo,r.Description as Recurso From coMarketProfile as T0 inner join coTPAssignment as T1 on T1.ParentObjectID = T0.ObjectID and T1.ParentClassID = 10652 and T1.CollectionID = 1 inner join coRescAssignmen as T2 on T2.ParentObjectID = T0.ObjectID AND T2.ParentClassID = 10652 and T2.CollectionID = 1 inner join fdBasResc as r on T2.RescObjectID=r.ObjectID Where T0.EffDatesStart <= {3}ts '{0}-{1}-{2} 23:59:59'{4} and T0.EffDatesEnd >= {3}ts '{0}-{1}-{2} 00:00:00'{4} and T1.TPObjectID = {5}", Obj.FechaCreacion.Year, Obj.FechaCreacion.Month.ToString.PadLeft(2, "0"), Obj.FechaCreacion.Day.ToString.PadLeft(2, "0"), "{", "}", lCliente), "Datos")
+            Dim lTableFinal As New DataTable("Datos")
+            lTableFinal.Columns.Add("IdProducto", GetType(Integer))
+            lTableFinal.Columns.Add("Codigo", GetType(String))
+            lTableFinal.Columns.Add("Recurso", GetType(String))
+            lTableFinal.Columns.Add("Eliminar", GetType(String))
+
+            For Each lRow As DataRow In lTableProductos.Rows
+                If (From b In lTable.AsEnumerable Where b.Field(Of Integer)("IdProducto") = lRow("IdProducto")).Count > 0 Then
+                    Dim lRowData As DataRow = lTableFinal.NewRow
+                    lRowData("IdProducto") = lRow("IdProducto")
+                    lRowData("Codigo") = lRow("Codigo")
+                    lRowData("Recurso") = lRow("Recurso")
+                    lRowData("Eliminar") = "Eliminar"
+                    lTableFinal.Rows.Add(lRowData)
+                End If
+            Next
+
+            Me.ugData.DataSource = lTableFinal
+            Me.ugData.DataBind()
+
+            Me.ugData.DisplayLayout.Bands(0).Columns("Eliminar").Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
+
+        Catch ex As Exception
+            MsgBox("Error al intentar obtener los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmPeriodoVendedorDetalle_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Me.Limpiar()
+
+    End Sub
+
+
+    Private Sub dtpPeriodo_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        Obj = New PROPeriodoBO
+        ObjV = New PROPeriodoVendedorBO
+        Call Me.CargarGrid()
+
+    End Sub
+
+
+    Private Sub txtVendedor_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtVendedor.EditorButtonClick
+
+        Try
+
+            Obj = New PROPeriodoBO
+            ObjV = New PROPeriodoVendedorBO
+            Me.txtVendedor.Tag = Nothing
+            Me.txtVendedor.Text = String.Empty
+            Me.udsData.Rows.Clear()
+
+            Dim iDatos As DataTable = GetDataTableProtean("Select distinct Vendedor, Nombre_Vendedor as Vendedor From view_Cubo_SocioxVendedor Order By Vendedor", "Datos")
+            Dim lCodigo As Object = MostrarBuscador("Vendedores", iDatos, "Vendedores")
+            If i_LlaveBusqueda IsNot Nothing AndAlso String.IsNullOrEmpty(i_LlaveBusqueda.ToString) = False Then
+                If PROPeriodoVendedorBO.Exists(gConnectionString, Me.dtpPeriodo.Value.Year, lCodigo.ToString) = False Then
+                    MsgBox("El Vendedor Seleccionado no se Encuentra Registrado.", MsgBoxStyle.Information, Me.Text)
+                    Exit Sub
+                End If
+
+                lCliente = String.Empty
+                Dim lTableCliente As DataTable = GetDataTableProtean(String.Format("Select distinct ObjectID_Socio_Negcio as Cliente From view_Cubo_SocioxVendedor Where Vendedor = '{0}'", lCodigo), "Datos")
+                If lTableCliente.Rows.Count = 0 Then
+                    MsgBox("El Vendedor no posee un cliente ligado.", MsgBoxStyle.Information, Me.Text)
+                    Exit Sub
+                Else
+                    lCliente = lTableCliente.Rows(0)(0)
+                End If
+
+                Obj = New PROPeriodoBO(gConnectionString, Me.dtpPeriodo.Value.Year)
+                ObjV = New PROPeriodoVendedorBO(gConnectionString, Me.dtpPeriodo.Value.Year, lCodigo)
+                Me.txtVendedor.Tag = lCodigo
+                Me.txtVendedor.Text = String.Format("{0} - {1}", lCodigo, i_LlaveBusqueda2.ToString)
+                Call Me.CargarGrid()
+            End If
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub ugData_ClickCellButton(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.CellEventArgs) Handles ugData.ClickCellButton
+
+        Try
+
+            If Obj.PeriodoCerrado = True Then
+                MsgBox("El Perído ya se Encuentra Cerrado, no se puede eliminar el recurso.", MsgBoxStyle.Information, Me.Text)
+                Exit Sub
+            ElseIf PROPeriodoVendedorDetalleBO.GetAllQuery(gConnectionString, String.Format("Select top 1 * From PRO_PeriodoVendedorDetalle Where IdPeriodo = {0} and IdCliente = {1} and IdProducto = {2} and Cantidad > 0", Me.dtpPeriodo.Value.Year, lCliente, e.Cell.Row.Cells("IdProducto").Value)).Count > 0 Then
+                MsgBox("El Recurso ya cuenta con pronóstico ingresado, no se puede eliminar.", MsgBoxStyle.Information, Me.Text)
+                Exit Sub
+            End If
+
+            If MessageBox.Show("¿Está seguro(a) de Eliminar el Registro Seleccionado?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+
+            PeriodoBL.EliminarProducto(gConnectionString, Me.dtpPeriodo.Value.Year, lCliente, e.Cell.Row.Cells("IdProducto").Value)
+            Call Me.CargarGrid()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al eliminar recurso: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub lnkAgregarProducto_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkAgregarProducto.LinkClicked
+
+        Try
+            If Obj.PeriodoCerrado = True Then
+                MsgBox("El Perído ya se Encuentra Cerrado, no se pueden ingresar más recursos.", MsgBoxStyle.Information, Me.Text)
+                Exit Sub
+            End If
+
+            Dim iDatos As DataTable = GetDataTableProtean(String.Format("Select distinct T2.RescObjectID as IdProducto,T2.Resc as Codigo,r.Description as Recurso From coMarketProfile as T0 inner join coTPAssignment as T1 on T1.ParentObjectID = T0.ObjectID and T1.ParentClassID = 10652 and T1.CollectionID = 1 inner join coRescAssignmen as T2 on T2.ParentObjectID = T0.ObjectID AND T2.ParentClassID = 10652 and T2.CollectionID = 1 inner join fdBasResc as r on T2.RescObjectID=r.ObjectID Where T0.EffDatesStart <= {3}ts '{0}-{1}-{2} 23:59:59'{4} and T0.EffDatesEnd >= {3}ts '{0}-{1}-{2} 00:00:00'{4} and T1.TPObjectID = {5} Order By T2.Resc", Obj.FechaCreacion.Year, Obj.FechaCreacion.Month.ToString.PadLeft(2, "0"), Obj.FechaCreacion.Day.ToString.PadLeft(2, "0"), "{", "}", lCliente), "Datos")
+            Dim lCodigo As Object = MostrarBuscador("Recursos", iDatos, "Recursos", True)
+            If i_LlaveBusqueda IsNot Nothing AndAlso IsNumeric(i_LlaveBusqueda) = True Then
+                If PROPeriodoVendedorDetalleBO.GetAllQuery(gConnectionString, String.Format("Select top 1 * From PRO_PeriodoVendedorDetalle Where IdPeriodo = {0} and IdCliente = {1} and IdProducto = {2}", Me.dtpPeriodo.Value.Year, lCliente, CInt(lCodigo))).Count > 0 Then
+                    MsgBox("El Recurso ya se encuentra registrado.", MsgBoxStyle.Information, Me.Text)
+                    Exit Sub
+                End If
+
+                PeriodoBL.GuardarRecurso(gConnectionString, Me.dtpPeriodo.Value.Year, lCliente, CInt(lCodigo))
+
+                Call Me.CargarGrid()
+
+            End If
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al agregar recurso: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+End Class

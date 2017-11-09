@@ -1,0 +1,102 @@
+﻿Imports CrystalDecisions.CrystalReports
+
+Public Class frmReporteClientesConPronosticoIngresado
+
+
+    Private Sub frmReporteClientesConPronosticoIngresado_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim iX As DevExpress.XtraBars.Docking.DockPanel
+        iX = DockManager1.AddPanel(DevExpress.XtraBars.Docking.DockingStyle.Left)
+        iX.Text = "Filtros"
+        iX.Width = 275
+        GroupControl3.Dock = DockStyle.Fill
+        iX.ControlContainer.Controls.Add(GroupControl3)
+        DockManager1.ActivePanel = iX
+
+        CrystalReportViewer1.ShowExportButton = CheckAccess(gConnectionString, gUsuario, Me.Name, 5)
+        CrystalReportViewer1.ShowPrintButton = CheckAccess(gConnectionString, gUsuario, Me.Name, 6)
+
+    End Sub
+
+
+    Private Sub btnFiltrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFiltrar.Click
+
+        Try
+
+            Dim lWhere = String.Format("Where v.IdPeriodo = {0}", Me.dtpPeriodo.Value.Year)
+
+            If Me.txtVendedor.Tag IsNot Nothing Then lWhere = String.Format("{0} and v.Vendedor='{1}'", lWhere, Me.txtVendedor.Tag)
+
+            Dim lTable As DataTable = GetDataTable(String.Format("Select v.Vendedor as IdVendedor,d.IdCliente,SUM(d.Cantidad) as Pronostico From Pro_PeriodoVendedor as v inner join PRO_PeriodoVendedorDetalle as d on v.IdPeriodo=d.IdPeriodo {0} Group By v.Vendedor,d.IdCliente Having SUM(d.Cantidad) > 0", lWhere), "Datos")
+
+            Dim lTableCliente As DataTable = GetDataTableEtiqueta("Select IdCliente,Codigo,NombreCliente as Cliente From ETI_ClienteGrupo", "Clientes")
+
+            lTableCliente.Merge(GetDataTableProtean("Select ObjectID_Socio_Negcio as IdCliente,Socio_Negocio as Codigo,Nombre_Socio_Negocio as Cliente From view_Cubo_SocioxPais", "Clientes"))
+
+            Dim lTableVendedor As DataTable = GetDataTableProtean(String.Format("Select distinct Vendedor as Codigo,Nombre_Vendedor as Vendedor From view_Cubo_SocioxVendedor {0} Order By Vendedor", IIf(String.IsNullOrEmpty(Me.txtVendedor.Tag) = False, String.Format("Where Vendedor = '{0}'", Me.txtVendedor.Tag), String.Empty)), "Clientes")
+
+            Dim lTableFinal As New DataTable("Datos")
+            lTableFinal.Columns.Add("CodigoVendedor", GetType(String))
+            lTableFinal.Columns.Add("Vendedor", GetType(String))
+            lTableFinal.Columns.Add("CodigoCliente", GetType(String))
+            lTableFinal.Columns.Add("Cliente", GetType(String))
+
+            For Each lRow As DataRow In lTable.Rows
+                Dim lRowData As DataRow = lTableFinal.NewRow
+                lRowData("CodigoVendedor") = lRow("IdVendedor")
+                lRowData("Vendedor") = (From b In lTableVendedor.AsEnumerable Where b.Field(Of String)("Codigo") = lRow("IdVendedor") Select b.Field(Of String)("Vendedor")).FirstOrDefault
+                lRowData("CodigoCliente") = (From b In lTableCliente.AsEnumerable Where b.Field(Of Integer)("IdCliente") = lRow("IdCliente") Select b.Field(Of String)("Codigo")).FirstOrDefault
+                lRowData("Cliente") = (From b In lTableCliente.AsEnumerable Where b.Field(Of Integer)("IdCliente") = lRow("IdCliente") Select b.Field(Of String)("Cliente")).FirstOrDefault
+                lTableFinal.Rows.Add(lRowData)
+            Next
+
+            Dim lFormulario As New frmReporte
+            Dim lDS As New DSPRO_ClientesConPronosticoIngresado
+            Dim lReporte As New rptPRO_ClientesConPronosticoIngresado
+
+            lDS.Tables("Datos").Merge(lTableFinal)
+
+            For Each thisFormulaField In lReporte.DataDefinition.FormulaFields
+                Select Case thisFormulaField.FormulaName
+
+                    Case "{@NombreEmpresa}"
+                        thisFormulaField.Text = "'GUANDY'"
+                    Case "{@Titulo}"
+                        thisFormulaField.Text = "'Clientes con Pronóstico Ingresado'"
+                    Case "{@Usuario}"
+                        thisFormulaField.Text = String.Format("'{0}'", gUsuario)
+
+                End Select
+
+            Next
+
+            lReporte.SetDataSource(lDS)
+            CrystalReportViewer1.ReportSource = lReporte
+            CrystalReportViewer1.Refresh()
+
+        Catch ex As Exception
+            MsgBox("Error al ejecutar reporte: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub txtVendedor_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtVendedor.EditorButtonClick
+
+        Me.txtVendedor.Tag = Nothing
+        Me.txtVendedor.Text = String.Empty
+
+        Dim iDatos As DataTable = GetDataTableProtean("Select distinct Vendedor, Nombre_Vendedor as Vendedor From view_Cubo_SocioxVendedor Order By Vendedor", "Datos")
+        Dim lCodigo As Object = MostrarBuscador("Vendedores", iDatos, "Vendedores")
+        If i_LlaveBusqueda IsNot Nothing AndAlso String.IsNullOrEmpty(i_LlaveBusqueda.ToString) = False Then
+            If PROPeriodoVendedorBO.Exists(gConnectionString, Me.dtpPeriodo.Value.Year, lCodigo.ToString) = False Then
+                MsgBox("El Vendedor Seleccionado no se Encuentra Registrado.", MsgBoxStyle.Information, Me.Text)
+                Exit Sub
+            End If
+            Me.txtVendedor.Tag = lCodigo
+            Me.txtVendedor.Text = String.Format("{0} - {1}", lCodigo, i_LlaveBusqueda2.ToString)
+        End If
+
+    End Sub
+
+End Class

@@ -1,0 +1,81 @@
+﻿Public Class frmBuscadorCliente
+
+    Public pFecha As DateTime
+
+
+    Private Sub btnSeleccionar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionar.Click
+
+        If Not Grid.Rows.Count = 1 Then
+            i_LlaveBusqueda = Grid.GetData(Grid.Row, 0)
+            Me.Close()
+        End If
+
+    End Sub
+
+
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+
+        i_LlaveBusqueda = Nothing
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub Grid_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Grid.DoubleClick
+
+        If Not Grid.Rows.Count = 1 Then
+            i_LlaveBusqueda = Grid.GetData(Grid.Row, 0)
+            Me.Close()
+        End If
+
+    End Sub
+
+
+    Private Sub frmBuscadorCliente_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+
+
+        Me.Dispose()
+
+    End Sub
+
+
+    Private Sub frmBuscadorCliente_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        i_LlaveBusqueda = Nothing
+
+    End Sub
+
+
+    Private Sub cmdBuscar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdBuscar.Click
+
+        Try
+            Dim lwhere1 As String = "Where 1 = 1"
+
+            If String.IsNullOrEmpty(Me.txtCodigo.Text) = False Then
+                lwhere1 = String.Format("{0} and  t1.TPObjectID = {1}", lwhere1, Me.txtCodigo.Text)
+            End If
+
+            If String.IsNullOrEmpty(Me.txtNombre.Text) = False Then
+                'lwhere1 = String.Format("{0} and  NombreCliente like '%{1}%'", lwhere1, Me.txtNombre.Text)
+            End If
+
+            gConnectionStringProtean = "Data Source=10.10.10.166;Initial Catalog=Protean;Persist Security Info=True;User ID=sitedv;Password=$Rfghy&78;"
+
+            Me.Grid.DataSource = GetDataTableProtean(String.Format("Select distinct t1.TPObjectID as Codigo From coMarketProfile as T0 inner join coTPAssignment as T1 on T1.ParentObjectID = T0.ObjectID and T1.ParentClassID = 10652 and T1.CollectionID = 1 inner join coRescAssignmen as T2 on T2.ParentObjectID = T0.ObjectID AND T2.ParentClassID = 10652 and T2.CollectionID = 1 Where T0.EffDatesStart <= {3}ts '{0}-{1}-{2} 23:59:59'{4} and T0.EffDatesEnd >= {3}ts '{0}-{1}-{2} 00:00:00'{4}", pFecha.Year, pFecha.Month.ToString.PadLeft(2, "0"), pFecha.Day.ToString.PadLeft(2, "0"), "{", "}"), "Busqueda")
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, Me.Text)
+            Me.Grid.DataSource = Nothing
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdLimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdLimpiar.Click
+
+        Me.txtCodigo.Text = String.Empty
+        Me.txtNombre.Text = String.Empty
+
+    End Sub
+
+End Class

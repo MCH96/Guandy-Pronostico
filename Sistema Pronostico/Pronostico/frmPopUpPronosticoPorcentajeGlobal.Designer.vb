@@ -1,0 +1,358 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmPopUpPronosticoPorcentajeGlobal
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
+        Dim UltraDataColumn1 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMes")
+        Dim UltraDataColumn2 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Mes")
+        Dim UltraDataColumn3 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cerrado")
+        Dim UltraDataColumn4 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CerradoPor")
+        Dim UltraDataColumn5 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaCierre")
+        Dim UltraDataColumn6 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cerrar")
+        Dim UltraDataColumn7 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Abrir")
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPopUpPronosticoPorcentajeGlobal))
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.Bar2 = New DevExpress.XtraBars.Bar
+        Me.cmdCerrar = New DevExpress.XtraBars.BarLargeButtonItem
+        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
+        Me.BarStaticItem2 = New DevExpress.XtraBars.BarStaticItem
+        Me.gFile = New System.Windows.Forms.OpenFileDialog
+        Me.sFile = New System.Windows.Forms.FolderBrowserDialog
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
+        Me.txtPorcentaje = New DevExpress.XtraEditors.TextEdit
+        Me.lblCodigo = New DevExpress.XtraEditors.LabelControl
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl
+        Me.udsData = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
+        Me.cmdNuevo = New DevExpress.XtraBars.BarLargeButtonItem
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.txtPorcentaje.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
+        CType(Me.udsData, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'BarManager1
+        '
+        Me.BarManager1.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.Bar2})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
+        Me.BarManager1.Form = Me
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.cmdCerrar})
+        Me.BarManager1.MainMenu = Me.Bar2
+        Me.BarManager1.MaxItemId = 12
+        Me.BarManager1.MdiMenuMergeStyle = DevExpress.XtraBars.BarMdiMenuMergeStyle.Always
+        '
+        'Bar2
+        '
+        Me.Bar2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.Bar2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.Bar2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.Bar2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.Bar2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.Bar2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.Bar2.BarName = "Main menu"
+        Me.Bar2.CanDockStyle = CType((((((DevExpress.XtraBars.BarCanDockStyle.Floating Or DevExpress.XtraBars.BarCanDockStyle.Left) _
+                    Or DevExpress.XtraBars.BarCanDockStyle.Top) _
+                    Or DevExpress.XtraBars.BarCanDockStyle.Right) _
+                    Or DevExpress.XtraBars.BarCanDockStyle.Bottom) _
+                    Or DevExpress.XtraBars.BarCanDockStyle.Standalone), DevExpress.XtraBars.BarCanDockStyle)
+        Me.Bar2.DockCol = 0
+        Me.Bar2.DockRow = 0
+        Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cmdCerrar)})
+        Me.Bar2.OptionsBar.BarState = DevExpress.XtraBars.BarState.Expanded
+        Me.Bar2.OptionsBar.MultiLine = True
+        Me.Bar2.OptionsBar.UseWholeRow = True
+        Me.Bar2.Text = "Main menu"
+        '
+        'cmdCerrar
+        '
+        Me.cmdCerrar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.[Default]
+        Me.cmdCerrar.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.cmdCerrar.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.cmdCerrar.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.[Default]
+        Me.cmdCerrar.Caption = "Cerrar"
+        Me.cmdCerrar.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Bottom
+        Me.cmdCerrar.Id = 8
+        Me.cmdCerrar.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.[Default]
+        Me.cmdCerrar.MergeType = DevExpress.XtraBars.BarMenuMerge.Add
+        Me.cmdCerrar.Name = "cmdCerrar"
+        Me.cmdCerrar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        '
+        'barDockControlTop
+        '
+        Me.barDockControlTop.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.barDockControlTop.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.barDockControlTop.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.barDockControlTop.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.barDockControlTop.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.barDockControlTop.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlTop.Size = New System.Drawing.Size(253, 24)
+        '
+        'barDockControlBottom
+        '
+        Me.barDockControlBottom.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.barDockControlBottom.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.barDockControlBottom.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.barDockControlBottom.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.barDockControlBottom.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.barDockControlBottom.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 86)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(253, 0)
+        '
+        'barDockControlLeft
+        '
+        Me.barDockControlLeft.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.barDockControlLeft.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.barDockControlLeft.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.barDockControlLeft.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.barDockControlLeft.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.barDockControlLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 24)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 62)
+        '
+        'barDockControlRight
+        '
+        Me.barDockControlRight.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.barDockControlRight.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.barDockControlRight.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.barDockControlRight.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.barDockControlRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.barDockControlRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me.barDockControlRight.Location = New System.Drawing.Point(253, 24)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 62)
+        '
+        'BarStaticItem2
+        '
+        Me.BarStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.[Default]
+        Me.BarStaticItem2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.BarStaticItem2.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.BarStaticItem2.AutoSize = DevExpress.XtraBars.BarStaticItemSize.Content
+        Me.BarStaticItem2.Caption = "|"
+        Me.BarStaticItem2.Id = 3
+        Me.BarStaticItem2.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.[Default]
+        Me.BarStaticItem2.MergeType = DevExpress.XtraBars.BarMenuMerge.Add
+        Me.BarStaticItem2.Name = "BarStaticItem2"
+        Me.BarStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near
+        Me.BarStaticItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        '
+        'gFile
+        '
+        Me.gFile.Title = "Seleccione la imagen o documento a adjuntar a la fórmula"
+        '
+        'sFile
+        '
+        Me.sFile.Description = "Seleccione el lugar donde desea grabar el archivo."
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.GroupControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.GroupControl1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.GroupControl1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.GroupControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.GroupControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.GroupControl1.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.GroupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.GroupControl1.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.GroupControl1.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.GroupControl1.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.GroupControl1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.GroupControl1.CaptionImageLocation = DevExpress.Utils.GroupElementLocation.[Default]
+        Me.GroupControl1.CaptionLocation = DevExpress.Utils.Locations.[Default]
+        Me.GroupControl1.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.GroupControl1.Controls.Add(Me.txtPorcentaje)
+        Me.GroupControl1.Controls.Add(Me.lblCodigo)
+        Me.GroupControl1.Location = New System.Drawing.Point(5, 6)
+        Me.GroupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(243, 50)
+        Me.GroupControl1.TabIndex = 0
+        Me.GroupControl1.Text = "Pronóstico"
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.[Default]
+        Me.txtPorcentaje.Enabled = False
+        Me.txtPorcentaje.Location = New System.Drawing.Point(119, 25)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.[Default]
+        Me.txtPorcentaje.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[Default]
+        Me.txtPorcentaje.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPorcentaje.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.txtPorcentaje.Properties.Appearance.Options.UseFont = True
+        Me.txtPorcentaje.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtPorcentaje.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txtPorcentaje.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.txtPorcentaje.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.txtPorcentaje.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.txtPorcentaje.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.txtPorcentaje.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.txtPorcentaje.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.txtPorcentaje.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.txtPorcentaje.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.txtPorcentaje.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.txtPorcentaje.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.txtPorcentaje.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.txtPorcentaje.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.txtPorcentaje.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.txtPorcentaje.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.txtPorcentaje.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.txtPorcentaje.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.txtPorcentaje.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.txtPorcentaje.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.txtPorcentaje.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.txtPorcentaje.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.txtPorcentaje.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.txtPorcentaje.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.txtPorcentaje.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.[Default]
+        Me.txtPorcentaje.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.txtPorcentaje.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.[Default]
+        Me.txtPorcentaje.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.[Default]
+        Me.txtPorcentaje.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin
+        Me.txtPorcentaje.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.[Default]
+        Me.txtPorcentaje.Properties.Mask.EditMask = "n2"
+        Me.txtPorcentaje.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.txtPorcentaje.Size = New System.Drawing.Size(116, 20)
+        Me.txtPorcentaje.TabIndex = 119
+        Me.txtPorcentaje.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None
+        '
+        'lblCodigo
+        '
+        Me.lblCodigo.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.[Default]
+        Me.lblCodigo.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.lblCodigo.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblCodigo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.lblCodigo.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.lblCodigo.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.lblCodigo.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.lblCodigo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.lblCodigo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.[Default]
+        Me.lblCodigo.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None
+        Me.lblCodigo.LineLocation = DevExpress.XtraEditors.LineLocation.[Default]
+        Me.lblCodigo.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.[Default]
+        Me.lblCodigo.Location = New System.Drawing.Point(8, 28)
+        Me.lblCodigo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(105, 13)
+        Me.lblCodigo.TabIndex = 6
+        Me.lblCodigo.Text = "% Incremento Global:"
+        Me.lblCodigo.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal
+        Me.PanelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.[Default]
+        Me.PanelControl1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.[Default]
+        Me.PanelControl1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.[Default]
+        Me.PanelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.[Default]
+        Me.PanelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.PanelControl1.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PanelControl1.Controls.Add(Me.GroupControl1)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 24)
+        Me.PanelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(253, 62)
+        Me.PanelControl1.TabIndex = 4
+        '
+        'udsData
+        '
+        UltraDataColumn1.DataType = GetType(Integer)
+        UltraDataColumn3.DataType = GetType(Boolean)
+        UltraDataColumn5.DataType = GetType(Date)
+        Me.udsData.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7})
+        '
+        'cmdNuevo
+        '
+        Me.cmdNuevo.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.[Default]
+        Me.cmdNuevo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.cmdNuevo.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.[Default]
+        Me.cmdNuevo.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.[Default]
+        Me.cmdNuevo.Caption = "Nuevo"
+        Me.cmdNuevo.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Bottom
+        Me.cmdNuevo.Id = 0
+        Me.cmdNuevo.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.[Default]
+        Me.cmdNuevo.MergeType = DevExpress.XtraBars.BarMenuMerge.Add
+        Me.cmdNuevo.Name = "cmdNuevo"
+        Me.cmdNuevo.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        '
+        'frmPopUpPronosticoPorcentajeGlobal
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(253, 86)
+        Me.Controls.Add(Me.PanelControl1)
+        Me.Controls.Add(Me.barDockControlLeft)
+        Me.Controls.Add(Me.barDockControlRight)
+        Me.Controls.Add(Me.barDockControlBottom)
+        Me.Controls.Add(Me.barDockControlTop)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "frmPopUpPronosticoPorcentajeGlobal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Porcentaje Global"
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.txtPorcentaje.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        CType(Me.udsData, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents BarManager1 As DevExpress.XtraBars.BarManager
+    Friend WithEvents Bar2 As DevExpress.XtraBars.Bar
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents BarStaticItem2 As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents cmdCerrar As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents gFile As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents sFile As System.Windows.Forms.FolderBrowserDialog
+
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
+    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents lblCodigo As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents udsData As Infragistics.Win.UltraWinDataSource.UltraDataSource
+    Friend WithEvents cmdNuevo As DevExpress.XtraBars.BarLargeButtonItem
+    Friend WithEvents txtPorcentaje As DevExpress.XtraEditors.TextEdit
+End Class

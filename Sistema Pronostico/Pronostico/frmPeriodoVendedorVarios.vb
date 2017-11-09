@@ -1,0 +1,535 @@
+﻿Public Class frmPeriodoVendedorVarios
+
+    Dim Obj As PROPeriodoBO
+    Dim ListMarcado As List(Of Integer)
+    Dim ListNoMarcado As List(Of Integer)
+
+
+    Private Sub Validar(ByVal pCierre As Boolean)
+
+        'se inician las listas
+        ListMarcado = New List(Of Integer)
+        ListNoMarcado = New List(Of Integer)
+
+        'se recorre el grid de los meses para llenar las listas
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In ugData.Rows
+            If lRow.Cells("Seleccionar").Value = True Then
+                ListMarcado.Add(lRow.Cells("IdMes").Value)
+
+                'se valida si se abre el mes que el mes padre no este cerrado. 
+                If pCierre = False And lRow.Cells("Cerrado").Value = True Then
+                    Throw New Exception(String.Format("El Período ya se encuentra cerrado en el mes de {0} no se puede aperturar.", lRow.Cells("Mes").Value))
+                End If
+            Else
+                ListNoMarcado.Add(lRow.Cells("IdMes").Value)
+            End If
+        Next
+
+        'apertura
+        If pCierre = False Then
+            'se recorre la lista de los meses marcados
+            For Each lItem As Integer In ListMarcado
+                'se recorre la lista de los meses no marcados para validar si hay alguno con problema
+                For Each lItemBandera As Integer In ListNoMarcado.FindAll(Function(b) b > lItem)
+                    Select Case lItemBandera
+                        Case 2
+                            If Obj.Mes2 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 3
+                            If Obj.Mes3 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 4
+                            If Obj.Mes4 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 5
+                            If Obj.Mes5 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 6
+                            If Obj.Mes6 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 7
+                            If Obj.Mes7 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 8
+                            If Obj.Mes8 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 9
+                            If Obj.Mes9 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 10
+                            If Obj.Mes10 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 11
+                            If Obj.Mes11 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 12
+                            If Obj.Mes12 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                    End Select
+                Next
+            Next
+
+        Else 'cierre
+            'se recorre la lista de los meses marcados
+            For Each lItem As Integer In ListMarcado
+                'se recorre la lista de los meses no marcados para validar si hay alguno con problema
+                For Each lItemBandera As Integer In ListNoMarcado.FindAll(Function(b) b < lItem)
+                    Select Case lItemBandera
+                        Case 1
+                            If Obj.Mes1 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 2
+                            If Obj.Mes2 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 3
+                            If Obj.Mes3 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 4
+                            If Obj.Mes4 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 5
+                            If Obj.Mes5 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 6
+                            If Obj.Mes6 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 7
+                            If Obj.Mes7 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 8
+                            If Obj.Mes8 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 9
+                            If Obj.Mes9 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 10
+                            If Obj.Mes10 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                        Case 11
+                            If Obj.Mes11 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado.", NombreMes(lItem), NombreMes(lItemBandera)))
+                    End Select
+                Next
+            Next
+
+        End If
+
+    End Sub
+
+
+    Private Sub ValidarPeriodoVendedor(ByVal ObjPV As PROPeriodoVendedorBO, ByVal pCierre As Boolean)
+
+        'se valida si hay algun mes no marcado
+        If ListNoMarcado.Count = 0 Then Exit Sub
+
+        'apertura
+        If pCierre = False Then
+            'se recorre la lista de los meses marcados
+            For Each lItem As Integer In ListMarcado
+                'se recorre la lista de los meses no marcados para validar si hay alguno con problema
+                For Each lItemBandera As Integer In ListNoMarcado.FindAll(Function(b) b > lItem)
+                    Select Case lItemBandera
+                        Case 2
+                            If ObjPV.Mes2 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 3
+                            If ObjPV.Mes3 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 4
+                            If ObjPV.Mes4 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 5
+                            If ObjPV.Mes5 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 6
+                            If ObjPV.Mes6 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 7
+                            If ObjPV.Mes7 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 8
+                            If ObjPV.Mes8 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 9
+                            If ObjPV.Mes9 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 10
+                            If ObjPV.Mes10 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 11
+                            If ObjPV.Mes11 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 12
+                            If ObjPV.Mes12 = True Then Throw New Exception(String.Format("El Mes de {0} no se puede aperturar porque el mes {1} se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                    End Select
+                Next
+            Next
+
+        Else 'cierre
+            'se recorre la lista de los meses marcados
+            For Each lItem As Integer In ListMarcado
+                'se recorre la lista de los meses no marcados para validar si hay alguno con problema
+                For Each lItemBandera As Integer In ListNoMarcado.FindAll(Function(b) b < lItem)
+                    Select Case lItemBandera
+                        Case 1
+                            If ObjPV.Mes1 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 2
+                            If ObjPV.Mes2 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 3
+                            If ObjPV.Mes3 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 4
+                            If ObjPV.Mes4 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 5
+                            If ObjPV.Mes5 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 6
+                            If ObjPV.Mes6 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 7
+                            If ObjPV.Mes7 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 8
+                            If ObjPV.Mes8 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 9
+                            If ObjPV.Mes9 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 10
+                            If ObjPV.Mes10 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                        Case 11
+                            If ObjPV.Mes11 = False Then Throw New Exception(String.Format("El Mes de {0}  no se puede cerrar porque el mes {1} no se encuentra Cerrado para el vendedor {2}.", NombreMes(lItem), NombreMes(lItemBandera), ObjPV.Vendedor))
+                    End Select
+                Next
+            Next
+
+        End If
+
+    End Sub
+
+
+    Private Sub CargarGrid()
+
+        Me.udsData.Rows.Clear()
+
+        Dim lTable As New DataTable("Datos")
+
+        For i As Integer = 1 To 12
+            Dim lFila As Infragistics.Win.UltraWinDataSource.UltraDataRow = Me.udsData.Rows.Add
+            lFila.SetCellValue("Seleccionar", False)
+            lFila.SetCellValue("IdMes", i)
+            lFila.SetCellValue("Mes", NombreMes(i))
+
+            Select Case i
+                Case 1
+                    lFila.SetCellValue("Cerrado", Obj.Mes1)
+                Case 2
+                    lFila.SetCellValue("Cerrado", Obj.Mes2)
+                Case 3
+                    lFila.SetCellValue("Cerrado", Obj.Mes3)
+                Case 4
+                    lFila.SetCellValue("Cerrado", Obj.Mes4)
+                Case 5
+                    lFila.SetCellValue("Cerrado", Obj.Mes5)
+                Case 6
+                    lFila.SetCellValue("Cerrado", Obj.Mes6)
+                Case 7
+                    lFila.SetCellValue("Cerrado", Obj.Mes7)
+                Case 8
+                    lFila.SetCellValue("Cerrado", Obj.Mes8)
+                Case 9
+                    lFila.SetCellValue("Cerrado", Obj.Mes9)
+                Case 10
+                    lFila.SetCellValue("Cerrado", Obj.Mes10)
+                Case 11
+                    lFila.SetCellValue("Cerrado", Obj.Mes11)
+                Case 12
+                    lFila.SetCellValue("Cerrado", Obj.Mes12)
+            End Select
+        Next
+
+    End Sub
+
+
+    Private Sub CargarVendedores()
+
+        Me.ugVendedores.DataSource = Me.udsVendedores
+
+        Dim lTableVendedores As New DataTable
+        lTableVendedores.Columns.Add("Seleccionar", GetType(Boolean))
+        lTableVendedores.Columns.Add("Código", GetType(String))
+        lTableVendedores.Columns.Add("Vendedor", GetType(String))
+
+        Dim iDatos As DataTable = GetDataTableProtean("Select distinct Vendedor as Código, Nombre_Vendedor as Vendedor From view_Cubo_SocioxVendedor Order By Vendedor", "Datos")
+
+        Dim ListObjPV As List(Of PROPeriodoVendedorBO) = PROPeriodoVendedorBO.GetAllFiltro(gConnectionString, String.Format("Where IdPeriodo = {0}", Me.txtPeriodo.Text))
+        For Each ObjPV As PROPeriodoVendedorBO In ListObjPV
+            Dim lRow As DataRow = lTableVendedores.NewRow
+            lRow("Seleccionar") = False
+            lRow("Código") = ObjPV.Vendedor
+            lRow("Vendedor") = (From b In iDatos.AsEnumerable Where b.Field(Of String)("Código") = ObjPV.Vendedor Select b.Field(Of String)("Vendedor")).FirstOrDefault
+            lTableVendedores.Rows.Add(lRow)
+        Next
+
+        Me.ugVendedores.DataSource = lTableVendedores
+        Me.ugVendedores.DataBind()
+
+    End Sub
+
+
+    Private Sub Limpiar()
+
+        Obj = New PROPeriodoBO
+        Me.txtPeriodo.Text = String.Empty
+        Me.ugVendedores.DataSource = Me.udsVendedores
+        Me.udsData.Rows.Clear()
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmPeriodoVendedorVarios_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Me.Limpiar()
+
+    End Sub
+
+
+    Private Sub txtPeriodo_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtPeriodo.EditorButtonClick
+
+        Try
+
+            Call Me.Limpiar()
+
+            Dim iDatos As DataTable = GetDataTable("Select IdPeriodo as [Período] From PRO_Periodo Where PeriodoCerrado = 0 Order By IdPeriodo", "Busqueda")
+            Dim lCodigo As Object = MostrarBuscador("Busqueda", iDatos, "Busqueda")
+
+            If lCodigo IsNot Nothing AndAlso IsNumeric(lCodigo) Then
+                Obj = New PROPeriodoBO(gConnectionString, CInt(lCodigo))
+                Me.txtPeriodo.Text = lCodigo
+                Call Me.CargarVendedores()
+                Call Me.CargarGrid()
+            End If
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdGrabar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdAperturarPeriodos.ItemClick
+
+        Try
+            Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugData.UpdateData()
+
+            Me.ugVendedores.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugVendedores.UpdateData()
+
+            Call Me.Validar(False)
+
+            Dim ListObjPV As New List(Of PROPeriodoVendedorBO)
+
+            For Each lRowVendedor As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+                If lRowVendedor.Cells("Seleccionar").Value = True Then
+
+                    Dim ObjPV As New PROPeriodoVendedorBO(gConnectionString, Me.txtPeriodo.Text, lRowVendedor.Cells("Código").Value.ToString)
+                    Call Me.ValidarPeriodoVendedor(ObjPV, False)
+
+                    For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+                        If lRow.Cells("Seleccionar").Value = True Then
+
+                            Select Case lRow.Cells("IdMes").Value
+
+                                Case 1
+                                    ObjPV.Mes1 = False
+                                    ObjPV.Mes1CerradoPor = Nothing
+                                    ObjPV.Mes1FechaCierre = Nothing
+                                Case 2
+                                    ObjPV.Mes2 = False
+                                    ObjPV.Mes2CerradoPor = Nothing
+                                    ObjPV.Mes2FechaCierre = Nothing
+                                Case 3
+                                    ObjPV.Mes3 = False
+                                    ObjPV.Mes3CerradoPor = Nothing
+                                    ObjPV.Mes3FechaCierre = Nothing
+                                Case 4
+                                    ObjPV.Mes4 = False
+                                    ObjPV.Mes4CerradoPor = Nothing
+                                    ObjPV.Mes4FechaCierre = Nothing
+                                Case 5
+                                    ObjPV.Mes5 = False
+                                    ObjPV.Mes5CerradoPor = Nothing
+                                    ObjPV.Mes5FechaCierre = Nothing
+                                Case 6
+                                    ObjPV.Mes6 = False
+                                    ObjPV.Mes6CerradoPor = Nothing
+                                    ObjPV.Mes6FechaCierre = Nothing
+                                Case 7
+                                    ObjPV.Mes7 = False
+                                    ObjPV.Mes7CerradoPor = Nothing
+                                    ObjPV.Mes7FechaCierre = Nothing
+                                Case 8
+                                    ObjPV.Mes8 = False
+                                    ObjPV.Mes8CerradoPor = Nothing
+                                    ObjPV.Mes8FechaCierre = Nothing
+                                Case 9
+                                    ObjPV.Mes9 = False
+                                    ObjPV.Mes9CerradoPor = Nothing
+                                    ObjPV.Mes9FechaCierre = Nothing
+                                Case 10
+                                    ObjPV.Mes10 = False
+                                    ObjPV.Mes10CerradoPor = Nothing
+                                    ObjPV.Mes10FechaCierre = Nothing
+                                Case 11
+                                    ObjPV.Mes11 = False
+                                    ObjPV.Mes11CerradoPor = Nothing
+                                    ObjPV.Mes11FechaCierre = Nothing
+                                Case 12
+                                    ObjPV.Mes12 = False
+                                    ObjPV.Mes12CerradoPor = Nothing
+                                    ObjPV.Mes12FechaCierre = Nothing
+
+                            End Select
+
+                        End If
+                    Next
+
+                    ListObjPV.Add(ObjPV)
+
+                End If
+            Next
+
+            frmPopUpComentario.pObligatorio = True
+            frmPopUpComentario.ShowDialog(Me)
+
+            If i_LlaveBusqueda = Nothing Then Exit Sub
+            PeriodoBL.GrabarPeriodoVendedorVarios(gConnectionString, ListObjPV, gUsuario, i_LlaveBusqueda.ToString)
+            MsgBox("Períodos Aperturados con Éxito.", MsgBoxStyle.Information, Me.Text)
+            Call Me.Limpiar()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdCerrarPeriodos_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrarPeriodos.ItemClick
+
+
+        Try
+            Me.ugData.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugData.UpdateData()
+
+            Me.ugVendedores.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode)
+            Me.ugVendedores.UpdateData()
+
+            Call Me.Validar(True)
+
+            Dim ListObjPV As New List(Of PROPeriodoVendedorBO)
+
+            For Each lRowVendedor As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+                If lRowVendedor.Cells("Seleccionar").Value = True Then
+
+                    Dim ObjPV As New PROPeriodoVendedorBO(gConnectionString, Me.txtPeriodo.Text, lRowVendedor.Cells("Código").Value.ToString)
+                    Call Me.ValidarPeriodoVendedor(ObjPV, True)
+
+                    For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+                        If lRow.Cells("Seleccionar").Value = True Then
+
+                            Select Case lRow.Cells("IdMes").Value
+
+                                Case 1
+                                    ObjPV.Mes1 = True
+                                    ObjPV.Mes1CerradoPor = gUsuario
+                                    ObjPV.Mes1FechaCierre = Now
+                                Case 2
+                                    ObjPV.Mes2 = True
+                                    ObjPV.Mes2CerradoPor = gUsuario
+                                    ObjPV.Mes2FechaCierre = Now
+                                Case 3
+                                    ObjPV.Mes3 = True
+                                    ObjPV.Mes3CerradoPor = gUsuario
+                                    ObjPV.Mes3FechaCierre = Now
+                                Case 4
+                                    ObjPV.Mes4 = True
+                                    ObjPV.Mes4CerradoPor = gUsuario
+                                    ObjPV.Mes4FechaCierre = Now
+                                Case 5
+                                    ObjPV.Mes5 = True
+                                    ObjPV.Mes5CerradoPor = gUsuario
+                                    ObjPV.Mes5FechaCierre = Now
+                                Case 6
+                                    ObjPV.Mes6 = True
+                                    ObjPV.Mes6CerradoPor = gUsuario
+                                    ObjPV.Mes6FechaCierre = Now
+                                Case 7
+                                    ObjPV.Mes7 = True
+                                    ObjPV.Mes7CerradoPor = gUsuario
+                                    ObjPV.Mes7FechaCierre = Now
+                                Case 8
+                                    ObjPV.Mes8 = True
+                                    ObjPV.Mes8CerradoPor = gUsuario
+                                    ObjPV.Mes8FechaCierre = Now
+                                Case 9
+                                    ObjPV.Mes9 = True
+                                    ObjPV.Mes9CerradoPor = gUsuario
+                                    ObjPV.Mes9FechaCierre = Now
+                                Case 10
+                                    ObjPV.Mes10 = True
+                                    ObjPV.Mes10CerradoPor = gUsuario
+                                    ObjPV.Mes10FechaCierre = Now
+                                Case 11
+                                    ObjPV.Mes11 = True
+                                    ObjPV.Mes11CerradoPor = gUsuario
+                                    ObjPV.Mes11FechaCierre = Now
+                                Case 12
+                                    ObjPV.Mes12 = True
+                                    ObjPV.Mes12CerradoPor = gUsuario
+                                    ObjPV.Mes12FechaCierre = Now
+
+                            End Select
+
+                        End If
+                    Next
+
+                    ListObjPV.Add(ObjPV)
+
+                End If
+            Next
+
+            PeriodoBL.GrabarPeriodoVendedorVarios(gConnectionString, ListObjPV, gUsuario, String.Empty)
+            MsgBox("Períodos Cerrados con Éxito.", MsgBoxStyle.Information, Me.Text)
+            Call Me.Limpiar()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+    Private Sub ugVendedores_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ugVendedores.KeyPress
+
+        If Me.ugVendedores.ActiveCell Is Nothing Then Exit Sub
+        If Me.ugVendedores.ActiveCell.Column.Key <> "Seleccionar" Then e.KeyChar = String.Empty
+
+    End Sub
+
+
+    Private Sub ugData_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ugData.KeyPress
+
+        If Me.ugData.ActiveCell Is Nothing Then Exit Sub
+        If Me.ugData.ActiveCell.Column.Key <> "Seleccionar" Then e.KeyChar = String.Empty
+
+    End Sub
+
+
+    Private Sub cmdSeleccionarTodosV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSeleccionarTodosV.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+            lRow.Cells("Seleccionar").Value = True
+        Next
+
+    End Sub
+
+
+    Private Sub cmdDeseleccionarTodosV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDeseleccionarTodosV.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugVendedores.Rows
+            lRow.Cells("Seleccionar").Value = False
+        Next
+
+    End Sub
+
+
+    Private Sub cmdSeleccionarTodos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSeleccionarTodos.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+            lRow.Cells("Seleccionar").Value = True
+        Next
+
+    End Sub
+
+
+    Private Sub cmdDeseleccionarTodos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDeseleccionarTodos.Click
+
+        For Each lRow As Infragistics.Win.UltraWinGrid.UltraGridRow In Me.ugData.Rows
+            lRow.Cells("Seleccionar").Value = False
+        Next
+
+    End Sub
+
+End Class

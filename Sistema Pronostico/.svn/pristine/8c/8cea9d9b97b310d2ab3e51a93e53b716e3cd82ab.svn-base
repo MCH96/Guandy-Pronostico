@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDocumentoSeccion" targetNamespace="http://tempuri.org/DSDocumentoSeccion.xsd" xmlns:mstns="http://tempuri.org/DSDocumentoSeccion.xsd" xmlns="http://tempuri.org/DSDocumentoSeccion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDocumentoSeccion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DSDocumentoSeccion" msprop:Generator_UserDSName="DSDocumentoSeccion" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DocumentoSeccion" msprop:Generator_UserTableName="DocumentoSeccion" msprop:Generator_RowDeletedName="DocumentoSeccionRowDeleted" msprop:Generator_TableClassName="DocumentoSeccionDataTable" msprop:Generator_RowChangedName="DocumentoSeccionRowChanged" msprop:Generator_RowClassName="DocumentoSeccionRow" msprop:Generator_RowChangingName="DocumentoSeccionRowChanging" msprop:Generator_RowEvArgName="DocumentoSeccionRowChangeEvent" msprop:Generator_RowEvHandlerName="DocumentoSeccionRowChangeEventHandler" msprop:Generator_TablePropName="DocumentoSeccion" msprop:Generator_TableVarName="tableDocumentoSeccion" msprop:Generator_RowDeletingName="DocumentoSeccionRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CorrelativoSeccion" msdata:Caption="Recurso" msprop:Generator_UserColumnName="CorrelativoSeccion" msprop:Generator_ColumnPropNameInRow="CorrelativoSeccion" msprop:Generator_ColumnVarNameInTable="columnCorrelativoSeccion" msprop:Generator_ColumnPropNameInTable="CorrelativoSeccionColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Titulo" msdata:Caption="Descripcion" msprop:Generator_UserColumnName="Titulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Descripcion" msdata:Caption="FechaEmision" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

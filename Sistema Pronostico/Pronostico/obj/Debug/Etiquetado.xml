@@ -1,0 +1,135 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Etiquetado
+</name>
+</assembly>
+<members>
+<member name="T:Etiquetado.DS_Documentos.SeccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.SubSeccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.AnexoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ImagenDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.AnexoSubSeccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ImagenSubSeccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ProductoAnexoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.DatoExtraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.DatoExtraSubSeccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.SeccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.SubSeccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.AnexoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ImagenRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.AnexoSubSeccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ImagenSubSeccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ProductoAnexoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.DatoExtraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.DatoExtraSubSeccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.SeccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.SubSeccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.AnexoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ImagenRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.AnexoSubSeccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ImagenSubSeccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.ProductoAnexoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.DatoExtraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos.DatoExtraSubSeccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Etiquetado.DS_Documentos">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>

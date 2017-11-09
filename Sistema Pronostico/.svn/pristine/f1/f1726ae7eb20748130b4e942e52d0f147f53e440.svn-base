@@ -1,0 +1,344 @@
+﻿Public Class frmPeriodo
+
+    Dim Obj As PROPeriodoBO
+
+
+    Private Function ObtenerValores(ByVal pMes As Integer) As String
+
+        Dim lValores As String = String.Empty
+
+        Select Case pMes
+            Case 1
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes1), New SECUsuarioBO(gConnectionString, Obj.Mes1CerradoPor).NombreUsuario, Obj.Mes1FechaCierre)
+            Case 2
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes2), New SECUsuarioBO(gConnectionString, Obj.Mes2CerradoPor).NombreUsuario, Obj.Mes2FechaCierre)
+            Case 3
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes3), New SECUsuarioBO(gConnectionString, Obj.Mes3CerradoPor).NombreUsuario, Obj.Mes3FechaCierre)
+            Case 4
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes4), New SECUsuarioBO(gConnectionString, Obj.Mes4CerradoPor).NombreUsuario, Obj.Mes4FechaCierre)
+            Case 5
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes5), New SECUsuarioBO(gConnectionString, Obj.Mes5CerradoPor).NombreUsuario, Obj.Mes5FechaCierre)
+            Case 6
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes6), New SECUsuarioBO(gConnectionString, Obj.Mes6CerradoPor).NombreUsuario, Obj.Mes6FechaCierre)
+            Case 7
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes7), New SECUsuarioBO(gConnectionString, Obj.Mes7CerradoPor).NombreUsuario, Obj.Mes7FechaCierre)
+            Case 8
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes8), New SECUsuarioBO(gConnectionString, Obj.Mes8CerradoPor).NombreUsuario, Obj.Mes8FechaCierre)
+            Case 9
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes9), New SECUsuarioBO(gConnectionString, Obj.Mes9CerradoPor).NombreUsuario, Obj.Mes9FechaCierre)
+            Case 10
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes10), New SECUsuarioBO(gConnectionString, Obj.Mes10CerradoPor).NombreUsuario, Obj.Mes10FechaCierre)
+            Case 11
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes11), New SECUsuarioBO(gConnectionString, Obj.Mes11CerradoPor).NombreUsuario, Obj.Mes11FechaCierre)
+            Case 12
+                lValores = String.Format("{0}_{1}_{2}", CInt(Obj.Mes12), New SECUsuarioBO(gConnectionString, Obj.Mes12CerradoPor).NombreUsuario, Obj.Mes12FechaCierre)
+        End Select
+
+        Return lValores
+
+    End Function
+
+
+    Private Sub CargarGrid()
+
+        Me.udsData.Rows.Clear()
+
+        Dim lTable As New DataTable("Datos")
+
+        For i As Integer = 1 To 12
+            Dim lFila As Infragistics.Win.UltraWinDataSource.UltraDataRow = Me.udsData.Rows.Add
+            lFila.SetCellValue("IdMes", i)
+            lFila.SetCellValue("Mes", NombreMes(i))
+            Dim lValores As String() = ObtenerValores(i).Split("_")
+            lFila.SetCellValue("Cerrado", CBool(lValores(0)))
+            lFila.SetCellValue("CerradoPor", lValores(1).ToString)
+            If String.IsNullOrEmpty(lValores(2)) = False Then lFila.SetCellValue("FechaCierre", CDate(lValores(2)))
+            lFila.SetCellValue("Cerrar", "Cerrar")
+            lFila.SetCellValue("Abrir", "Abrir")
+        Next
+
+        Me.ugData.DisplayLayout.Bands(0).Columns("Cerrar").Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
+        Me.ugData.DisplayLayout.Bands(0).Columns("Abrir").Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
+
+    End Sub
+
+
+    Private Sub Validar()
+
+        If Obj.IsNew = True Then
+            If PROPeriodoBO.Exists(gConnectionString, Me.dtpPeriodo.Value.Year) = True Then Throw New Exception("Período ya Ingresado.")
+        End If
+
+    End Sub
+
+
+    Private Sub LockControls()
+
+        Me.dtpPeriodo.Enabled = False
+        Me.ugData.Enabled = False
+
+    End Sub
+
+
+    Private Sub UnlockControls()
+
+        If Obj.IsNew = True Then Me.dtpPeriodo.Enabled = True
+        Me.ugData.Enabled = True
+
+    End Sub
+
+
+    Private Sub Limpiar()
+
+        Obj = New PROPeriodoBO
+        Me.dtpPeriodo.Value = Now.Date
+        Me.udsData.Rows.Clear()
+        Me.lblEstado.Text = "Abierto"
+
+    End Sub
+
+
+    Private Sub LockToolBar()
+
+        cmdGrabar.Enabled = True
+        cmdNuevo.Enabled = False
+        cmdEliminar.Enabled = False
+        cmdEditar.Enabled = False
+        cmdBuscar.Enabled = False
+
+    End Sub
+
+
+    Private Sub UnLockBar()
+
+        cmdGrabar.Enabled = False
+        cmdNuevo.Enabled = True
+        cmdEliminar.Enabled = True
+        cmdEditar.Enabled = True
+        cmdBuscar.Enabled = True
+
+    End Sub
+
+
+    Private Sub LoadData()
+
+        Try
+
+            Me.dtpPeriodo.Value = New DateTime(Obj.IdPeriodo, Now.Month, 1).Date
+            If Obj.PeriodoCerrado = True Then
+                Me.lblEstado.Text = "Cerrado"
+            Else
+                Me.lblEstado.Text = "Abierto"
+            End If
+            Call Me.CargarGrid()
+
+        Catch ex As Exception
+            MsgBox("Error al intentar obtener los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdCerrar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCerrar.ItemClick
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub frmPeriodo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Me.limpiar()
+        Call Me.LockControls()
+        Call Me.UnLockBar()
+
+    End Sub
+
+
+    Private Sub cmdGrabar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdGrabar.ItemClick
+
+        Try
+            Call Me.Validar()
+            Me.Cursor = Cursors.WaitCursor
+
+            If Obj.IsNew = True Then
+                Obj.IdPeriodo = Me.dtpPeriodo.Value.Year
+                Obj.Version = 1
+                Obj.CreadoPor = gUsuario
+                Obj.FechaCreacion = Now
+                PeriodoBL.Guardar(gConnectionString, Obj)
+            End If
+
+            Me.Cursor = Cursors.Default
+
+            LockControls()
+            UnLockBar()
+            limpiar()
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MsgBox("Error al intentar grabar los datos " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+
+    End Sub
+
+
+    Private Sub cmdNuevoo_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdNuevoo.ItemClick
+
+        If Not CheckAccess(gConnectionString, gUsuario, Me.Name, 1) Then
+            MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+            Exit Sub
+        End If
+
+        Call Me.limpiar()
+        Call Me.UnlockControls()
+        Call Me.LockToolBar()
+
+        Me.dtpPeriodo.Value = New DateTime(PROPeriodoBO.MaxID(gConnectionString), Now.Month, 1).Date
+        Call Me.CargarGrid()
+
+    End Sub
+
+
+    Private Sub cmdEditar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdEditar.ItemClick
+
+        If Not CheckAccess(gConnectionString, gUsuario, Me.Name, 2) Then
+            MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+            Exit Sub
+        End If
+
+        If Obj.IsNew = False Then
+            If Obj.PeriodoCerrado = True Then
+                MsgBox("Período ya Cerrado.", MsgBoxStyle.Information, Me.Text)
+                Exit Sub
+            End If
+
+            Call Me.UnlockControls()
+            Call Me.LockToolBar()
+        End If
+
+    End Sub
+
+
+    Private Sub cmdEliminar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdEliminar.ItemClick
+
+        If Not CheckAccess(gConnectionString, gUsuario, Me.Name, 3) Then
+            MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+            Exit Sub
+        End If
+
+        If Obj.IsNew = False Then
+            If MsgBox("Está seguro de querer eliminar el registro seleccionado?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, Me.Text) = MsgBoxResult.No Then
+                Exit Sub
+            End If
+
+            Obj.Delete(gConnectionString)
+
+            limpiar()
+            LockControls()
+            UnLockBar()
+        End If
+
+    End Sub
+
+
+    Private Sub cmdCancelar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdCancelar.ItemClick
+
+        limpiar()
+        LockControls()
+        UnLockBar()
+
+    End Sub
+
+
+    Private Sub cmdBuscar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cmdBuscar.ItemClick
+
+        Call Me.limpiar()
+
+        Dim iDatos As DataTable = GetDataTable("Select IdPeriodo as [Período] From PRO_Periodo Order By IdPeriodo", "Busqueda")
+        Dim lCodigo As Object = MostrarBuscador("Busqueda", iDatos, "Busqueda")
+
+        If lCodigo IsNot Nothing AndAlso IsNumeric(lCodigo) Then
+            Obj = New PROPeriodoBO(gConnectionString, lCodigo)
+            Call Me.LoadData()
+        End If
+
+    End Sub
+
+
+    Private Sub dtpPeriodo_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpPeriodo.ValueChanged
+
+        If Obj.IsNew = True And Me.dtpPeriodo.Enabled = True Then
+            If PROPeriodoBO.Exists(gConnectionString, Me.dtpPeriodo.Value.Year) = True Then
+                MsgBox("Período ya Ingresado.", MsgBoxStyle.Information, Me.Text)
+                Me.dtpPeriodo.Value = New DateTime(PROPeriodoBO.MaxID(gConnectionString), Now.Month, 1).Date
+            End If
+        End If
+
+    End Sub
+
+
+    Private Sub ugData_ClickCellButton(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.CellEventArgs) Handles ugData.ClickCellButton
+
+        If Obj.IsNew = True Then
+            MsgBox("Grabe el Período Primero.", MsgBoxStyle.Information, Me.Text)
+            Exit Sub
+        End If
+
+        Select Case e.Cell.Column.Key
+
+            Case "Cerrar"
+
+                If Not CheckAccess(gConnectionString, gUsuario, "AbrirPeriodo", 0) Then
+                    MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+                    Exit Sub
+                End If
+
+                If CInt(e.Cell.Row.Cells("IdMes").Value) <> 1 Then
+                    If Me.ugData.Rows(Me.ugData.ActiveRow.Index - 1).Cells("Cerrado").Value = False Then
+                        MsgBox("El Mes Anterior no se encuentra Cerrado.", MsgBoxStyle.Critical, "Seguridad del sistema")
+                        Exit Sub
+                    End If
+                End If
+
+                If MessageBox.Show("¿Está seguro(a) de Cerrar el Período?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+
+                Obj.PeriodoCerrado = True
+                Obj.PeriodoCerradoPor = gUsuario
+                Obj.PeriodoFechaCierre = Now
+
+                PeriodoBL.AperturaCierreMes(gConnectionString, Obj, gUsuario, True, CInt(e.Cell.Row.Cells("IdMes").Value))
+
+                Call Me.CargarGrid()
+
+            Case "Abrir"
+
+                If Not CheckAccess(gConnectionString, gUsuario, "CerrarPeriodo", 0) Then
+                    If Not CheckAccess(gConnectionString, gUsuario, "", 1) Then
+                        MsgBox("Sin acceso para ejecutar la opción", MsgBoxStyle.Critical, "Seguridad del sistema")
+                        Exit Sub
+                    End If
+                End If
+
+                If CInt(e.Cell.Row.Cells("IdMes").Value) <> 12 Then
+                    If Me.ugData.Rows(Me.ugData.ActiveRow.Index + 1).Cells("Cerrado").Value = True Then
+                        MsgBox("El Mes Siguiente no se encuentra Abierto.", MsgBoxStyle.Critical, "Seguridad del sistema")
+                        Exit Sub
+                    End If
+                End If
+
+                If MessageBox.Show("¿Está seguro(a) de Aperturar el Período?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+
+                Obj.PeriodoCerrado = False
+                Obj.PeriodoCerradoPor = gUsuario
+                Obj.PeriodoFechaCierre = Now
+
+                PeriodoBL.AperturaCierreMes(gConnectionString, Obj, gUsuario, False, CInt(e.Cell.Row.Cells("IdMes").Value))
+
+                Call Me.CargarGrid()
+
+        End Select
+
+    End Sub
+
+End Class

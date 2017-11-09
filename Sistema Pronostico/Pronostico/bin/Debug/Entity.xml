@@ -1,0 +1,3320 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Entity
+</name>
+</assembly>
+<members>
+<member name="P:My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:SECOpcionEntity._idOpcion">
+	<summary>
+ IdOpcion de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo IdOpcion de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._idModulo">
+	<summary>
+ IdModulo de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo IdModulo de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._nombreOpcion">
+	<summary>
+ NombreOpcion de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo NombreOpcion de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._grupo">
+	<summary>
+ Grupo de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Grupo de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._orden">
+	<summary>
+ Orden de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Orden de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._acceso">
+	<summary>
+ Acceso de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Acceso de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._agregar">
+	<summary>
+ Agregar de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Agregar de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._editar">
+	<summary>
+ Editar de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Editar de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._eliminar">
+	<summary>
+ Eliminar de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Eliminar de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._ejecutar">
+	<summary>
+ Ejecutar de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Ejecutar de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._imprimir">
+	<summary>
+ Imprimir de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Imprimir de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._exportar">
+	<summary>
+ Exportar de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo Exportar de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._opcionGlobal">
+	<summary>
+ OpcionGlobal de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo OpcionGlobal de la tabla SEC_Opcion</remarks>
+</member><member name="F:SECOpcionEntity._opcioGrupoEmpresa">
+	<summary>
+ OpcioGrupoEmpresa de SEC_Opcion.
+ </summary>
+	<remarks>Equivalente al campo OpcioGrupoEmpresa de la tabla SEC_Opcion</remarks>
+</member><member name="P:SECOpcionEntity.IdOpcion">
+	<summary>
+ IdOpcion de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.String que representa IdOpcion de SEC_Opcion.</value>
+	<returns>Valor tipo System.String que representa IdOpcion de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.IdModulo">
+	<summary>
+ IdModulo de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdModulo de SEC_Opcion.</value>
+	<returns>Valor tipo System.Int32 que representa IdModulo de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.NombreOpcion">
+	<summary>
+ NombreOpcion de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.String que representa NombreOpcion de SEC_Opcion.</value>
+	<returns>Valor tipo System.String que representa NombreOpcion de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Grupo">
+	<summary>
+ Grupo de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.String que representa Grupo de SEC_Opcion.</value>
+	<returns>Valor tipo System.String que representa Grupo de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Orden">
+	<summary>
+ Orden de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.String que representa Orden de SEC_Opcion.</value>
+	<returns>Valor tipo System.String que representa Orden de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Acceso">
+	<summary>
+ Acceso de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Acceso de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Acceso de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Agregar">
+	<summary>
+ Agregar de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Agregar de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Agregar de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Editar">
+	<summary>
+ Editar de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Editar de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Editar de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Eliminar">
+	<summary>
+ Eliminar de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Eliminar de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Eliminar de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Ejecutar">
+	<summary>
+ Ejecutar de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Ejecutar de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Ejecutar de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Imprimir">
+	<summary>
+ Imprimir de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Imprimir de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Imprimir de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.Exportar">
+	<summary>
+ Exportar de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Exportar de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa Exportar de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.OpcionGlobal">
+	<summary>
+ OpcionGlobal de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa OpcionGlobal de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa OpcionGlobal de SEC_Opcion.</returns>
+</member><member name="P:SECOpcionEntity.OpcioGrupoEmpresa">
+	<summary>
+ OpcioGrupoEmpresa de SEC_Opcion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa OpcioGrupoEmpresa de SEC_Opcion.</value>
+	<returns>Valor tipo System.Boolean que representa OpcioGrupoEmpresa de SEC_Opcion.</returns>
+</member><member name="T:SECOpcionEntity">
+	<summary>
+ Entidad que representa un registro de la tabla SEC_Opcion en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla SEC_Opcion</remarks>
+</member><member name="F:PROPeriodoVendedorDetalleEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_PeriodoVendedorDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorDetalleEntity._mes">
+	<summary>
+ Mes de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo Mes de la tabla PRO_PeriodoVendedorDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorDetalleEntity._idCliente">
+	<summary>
+ IdCliente de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdCliente de la tabla PRO_PeriodoVendedorDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorDetalleEntity._idProducto">
+	<summary>
+ IdProducto de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdProducto de la tabla PRO_PeriodoVendedorDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorDetalleEntity._cantidad">
+	<summary>
+ Cantidad de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo Cantidad de la tabla PRO_PeriodoVendedorDetalle</remarks>
+</member><member name="P:PROPeriodoVendedorDetalleEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedorDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorDetalleEntity.Mes">
+	<summary>
+ Mes de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Mes de PRO_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa Mes de PRO_PeriodoVendedorDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorDetalleEntity.IdCliente">
+	<summary>
+ IdCliente de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdCliente de PRO_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdCliente de PRO_PeriodoVendedorDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorDetalleEntity.IdProducto">
+	<summary>
+ IdProducto de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdProducto de PRO_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdProducto de PRO_PeriodoVendedorDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorDetalleEntity.Cantidad">
+	<summary>
+ Cantidad de PRO_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Decimal que representa Cantidad de PRO_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Decimal que representa Cantidad de PRO_PeriodoVendedorDetalle.</returns>
+</member><member name="T:PROPeriodoVendedorDetalleEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_PeriodoVendedorDetalle en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_PeriodoVendedorDetalle</remarks>
+</member><member name="F:SECModuloEntity._idModulo">
+	<summary>
+ IdModulo de SEC_Modulo.
+ </summary>
+	<remarks>Equivalente al campo IdModulo de la tabla SEC_Modulo</remarks>
+</member><member name="F:SECModuloEntity._nombreModulo">
+	<summary>
+ NombreModulo de SEC_Modulo.
+ </summary>
+	<remarks>Equivalente al campo NombreModulo de la tabla SEC_Modulo</remarks>
+</member><member name="F:SECModuloEntity._creadoPor">
+	<summary>
+ CreadoPor de SEC_Modulo.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla SEC_Modulo</remarks>
+</member><member name="F:SECModuloEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de SEC_Modulo.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla SEC_Modulo</remarks>
+</member><member name="P:SECModuloEntity.IdModulo">
+	<summary>
+ IdModulo de SEC_Modulo.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdModulo de SEC_Modulo.</value>
+	<returns>Valor tipo System.Int32 que representa IdModulo de SEC_Modulo.</returns>
+</member><member name="P:SECModuloEntity.NombreModulo">
+	<summary>
+ NombreModulo de SEC_Modulo.
+ </summary>
+	<value>Valor tipo System.String que representa NombreModulo de SEC_Modulo.</value>
+	<returns>Valor tipo System.String que representa NombreModulo de SEC_Modulo.</returns>
+</member><member name="P:SECModuloEntity.CreadoPor">
+	<summary>
+ CreadoPor de SEC_Modulo.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de SEC_Modulo.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de SEC_Modulo.</returns>
+</member><member name="P:SECModuloEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de SEC_Modulo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de SEC_Modulo.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de SEC_Modulo.</returns>
+</member><member name="T:SECModuloEntity">
+	<summary>
+ Entidad que representa un registro de la tabla SEC_Modulo en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla SEC_Modulo</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._idPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._mes">
+	<summary>
+ Mes de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo Mes de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._idCliente">
+	<summary>
+ IdCliente de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdCliente de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._idProducto">
+	<summary>
+ IdProducto de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdProducto de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._usuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo UsuarioModificacion de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._fechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo FechaHoraModificacion de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._maquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo MaquinaModificacion de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorDetalleEntity._cantidad">
+	<summary>
+ Cantidad de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<remarks>Equivalente al campo Cantidad de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.Mes">
+	<summary>
+ Mes de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Mes de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa Mes de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.IdCliente">
+	<summary>
+ IdCliente de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdCliente de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdCliente de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.IdProducto">
+	<summary>
+ IdProducto de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdProducto de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdProducto de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.UsuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.FechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.MaquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="P:BITPeriodoVendedorDetalleEntity.Cantidad">
+	<summary>
+ Cantidad de BIT_PeriodoVendedorDetalle.
+ </summary>
+	<value>Valor tipo System.Decimal que representa Cantidad de BIT_PeriodoVendedorDetalle.</value>
+	<returns>Valor tipo System.Decimal que representa Cantidad de BIT_PeriodoVendedorDetalle.</returns>
+</member><member name="T:BITPeriodoVendedorDetalleEntity">
+	<summary>
+ Entidad que representa un registro de la tabla BIT_PeriodoVendedorDetalle en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla BIT_PeriodoVendedorDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._vendedor">
+	<summary>
+ Vendedor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Vendedor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._versionVendedor">
+	<summary>
+ VersionVendedor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo VersionVendedor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes1">
+	<summary>
+ Mes1 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes1 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes1CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes1FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes2">
+	<summary>
+ Mes2 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes2 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes2CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes2FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes3">
+	<summary>
+ Mes3 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes3 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes3CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes3FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes4">
+	<summary>
+ Mes4 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes4 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes4CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes4FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes5">
+	<summary>
+ Mes5 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes5 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes5CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes5FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes6">
+	<summary>
+ Mes6 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes6 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes6CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes6FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes7">
+	<summary>
+ Mes7 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes7 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes7CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes7FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes8">
+	<summary>
+ Mes8 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes8 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes8CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes8FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes9">
+	<summary>
+ Mes9 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes9 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes9CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes9FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes10">
+	<summary>
+ Mes10 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes10 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes10CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes10FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes11">
+	<summary>
+ Mes11 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes11 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes11CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes11FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes12">
+	<summary>
+ Mes12 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes12 de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes12CerradoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes12FechaCierre de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._creadoPor">
+	<summary>
+ CreadoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PRO_PeriodoVendedorVersion.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="P:PROPeriodoVendedorVersionEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Vendedor">
+	<summary>
+ Vendedor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Vendedor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Vendedor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.VersionVendedor">
+	<summary>
+ VersionVendedor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Int32 que representa VersionVendedor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Int32 que representa VersionVendedor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes1">
+	<summary>
+ Mes1 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes1 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes1 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes1CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes1CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes2">
+	<summary>
+ Mes2 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes2 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes2 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes2CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes2CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes3">
+	<summary>
+ Mes3 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes3 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes3 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes3CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes3CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes4">
+	<summary>
+ Mes4 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes4 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes4 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes4CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes4CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes5">
+	<summary>
+ Mes5 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes5 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes5 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes5CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes5CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes6">
+	<summary>
+ Mes6 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes6 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes6 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes6CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes6CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes7">
+	<summary>
+ Mes7 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes7 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes7 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes7CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes7CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes8">
+	<summary>
+ Mes8 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes8 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes8 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes8CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes8CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes9">
+	<summary>
+ Mes9 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes9 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes9 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes9CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes9CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes10">
+	<summary>
+ Mes10 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes10 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes10 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes10CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes10CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes11">
+	<summary>
+ Mes11 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes11 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes11 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes11CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes11CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes12">
+	<summary>
+ Mes12 de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes12 de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes12 de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes12CerradoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa Mes12CerradoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.Mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.CreadoPor">
+	<summary>
+ CreadoPor de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="P:PROPeriodoVendedorVersionEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PRO_PeriodoVendedorVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PRO_PeriodoVendedorVersion.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PRO_PeriodoVendedorVersion.</returns>
+</member><member name="T:PROPeriodoVendedorVersionEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_PeriodoVendedorVersion en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_PeriodoVendedorVersion</remarks>
+</member><member name="F:PETPerfileSocioEntity._idPeticion">
+	<summary>
+ IdPeticion de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo IdPeticion de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._idPerfil">
+	<summary>
+ IdPerfil de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo IdPerfil de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._idSocio">
+	<summary>
+ IdSocio de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo IdSocio de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._ingresar">
+	<summary>
+ Ingresar de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo Ingresar de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._validado">
+	<summary>
+ Validado de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo Validado de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._operado">
+	<summary>
+ Operado de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo Operado de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._operadoError">
+	<summary>
+ OperadoError de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo OperadoError de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._mensaje">
+	<summary>
+ Mensaje de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo Mensaje de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._bandera">
+	<summary>
+ Bandera de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo Bandera de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._creadoPor">
+	<summary>
+ CreadoPor de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:PETPerfileSocioEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PET_PerfileSocio.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PET_PerfileSocio</remarks>
+</member><member name="P:PETPerfileSocioEntity.IdPeticion">
+	<summary>
+ IdPeticion de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Int64 que representa IdPeticion de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Int64 que representa IdPeticion de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.IdPerfil">
+	<summary>
+ IdPerfil de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPerfil de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Int32 que representa IdPerfil de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.IdSocio">
+	<summary>
+ IdSocio de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdSocio de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Int32 que representa IdSocio de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.Ingresar">
+	<summary>
+ Ingresar de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Ingresar de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Boolean que representa Ingresar de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.Validado">
+	<summary>
+ Validado de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Validado de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Boolean que representa Validado de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.Operado">
+	<summary>
+ Operado de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Operado de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Boolean que representa Operado de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.OperadoError">
+	<summary>
+ OperadoError de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Boolean que representa OperadoError de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Boolean que representa OperadoError de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.Mensaje">
+	<summary>
+ Mensaje de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.String que representa Mensaje de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.String que representa Mensaje de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.Bandera">
+	<summary>
+ Bandera de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Bandera de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.Boolean que representa Bandera de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.CreadoPor">
+	<summary>
+ CreadoPor de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PET_PerfileSocio.</returns>
+</member><member name="P:PETPerfileSocioEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PET_PerfileSocio.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PET_PerfileSocio.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PET_PerfileSocio.</returns>
+</member><member name="T:PETPerfileSocioEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PET_PerfileSocio en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PET_PerfileSocio</remarks>
+</member><member name="F:SECAdministradorModuloEntity._idUsuario">
+	<summary>
+ IdUsuario de SEC_AdministradorModulo.
+ </summary>
+	<remarks>Equivalente al campo IdUsuario de la tabla SEC_AdministradorModulo</remarks>
+</member><member name="F:SECAdministradorModuloEntity._idModulo">
+	<summary>
+ IdModulo de SEC_AdministradorModulo.
+ </summary>
+	<remarks>Equivalente al campo IdModulo de la tabla SEC_AdministradorModulo</remarks>
+</member><member name="P:SECAdministradorModuloEntity.IdUsuario">
+	<summary>
+ IdUsuario de SEC_AdministradorModulo.
+ </summary>
+	<value>Valor tipo System.String que representa IdUsuario de SEC_AdministradorModulo.</value>
+	<returns>Valor tipo System.String que representa IdUsuario de SEC_AdministradorModulo.</returns>
+</member><member name="P:SECAdministradorModuloEntity.IdModulo">
+	<summary>
+ IdModulo de SEC_AdministradorModulo.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdModulo de SEC_AdministradorModulo.</value>
+	<returns>Valor tipo System.Int32 que representa IdModulo de SEC_AdministradorModulo.</returns>
+</member><member name="T:SECAdministradorModuloEntity">
+	<summary>
+ Entidad que representa un registro de la tabla SEC_AdministradorModulo en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla SEC_AdministradorModulo</remarks>
+</member><member name="F:BITPeriodoCierreEntity._idPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._usuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo UsuarioModificacion de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._fechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo FechaHoraModificacion de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._maquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo MaquinaModificacion de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._cierraMes">
+	<summary>
+ CierraMes de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo CierraMes de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._abreMes">
+	<summary>
+ AbreMes de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo AbreMes de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._noMes">
+	<summary>
+ NoMes de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo NoMes de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._cierraPeriodo">
+	<summary>
+ CierraPeriodo de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo CierraPeriodo de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._abrePeriodo">
+	<summary>
+ AbrePeriodo de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo AbrePeriodo de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:BITPeriodoCierreEntity._comentario">
+	<summary>
+ Comentario de BIT_PeriodoCierre.
+ </summary>
+	<remarks>Equivalente al campo Comentario de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="P:BITPeriodoCierreEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.UsuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.FechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.MaquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.CierraMes">
+	<summary>
+ CierraMes de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.Boolean que representa CierraMes de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.Boolean que representa CierraMes de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.AbreMes">
+	<summary>
+ AbreMes de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.Boolean que representa AbreMes de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.Boolean que representa AbreMes de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.NoMes">
+	<summary>
+ NoMes de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.Int32 que representa NoMes de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.Int32 que representa NoMes de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.CierraPeriodo">
+	<summary>
+ CierraPeriodo de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.Boolean que representa CierraPeriodo de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.Boolean que representa CierraPeriodo de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.AbrePeriodo">
+	<summary>
+ AbrePeriodo de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.Boolean que representa AbrePeriodo de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.Boolean que representa AbrePeriodo de BIT_PeriodoCierre.</returns>
+</member><member name="P:BITPeriodoCierreEntity.Comentario">
+	<summary>
+ Comentario de BIT_PeriodoCierre.
+ </summary>
+	<value>Valor tipo System.String que representa Comentario de BIT_PeriodoCierre.</value>
+	<returns>Valor tipo System.String que representa Comentario de BIT_PeriodoCierre.</returns>
+</member><member name="T:BITPeriodoCierreEntity">
+	<summary>
+ Entidad que representa un registro de la tabla BIT_PeriodoCierre en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla BIT_PeriodoCierre</remarks>
+</member><member name="F:PROGrupoClienteEntity._idClientePadre">
+	<summary>
+ IdClientePadre de PRO_GrupoCliente.
+ </summary>
+	<remarks>Equivalente al campo IdClientePadre de la tabla PRO_GrupoCliente</remarks>
+</member><member name="F:PROGrupoClienteEntity._idClienteHijo">
+	<summary>
+ IdClienteHijo de PRO_GrupoCliente.
+ </summary>
+	<remarks>Equivalente al campo IdClienteHijo de la tabla PRO_GrupoCliente</remarks>
+</member><member name="F:PROGrupoClienteEntity._creadoPor">
+	<summary>
+ CreadoPor de PRO_GrupoCliente.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PRO_GrupoCliente</remarks>
+</member><member name="F:PROGrupoClienteEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PRO_GrupoCliente.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PRO_GrupoCliente</remarks>
+</member><member name="P:PROGrupoClienteEntity.IdClientePadre">
+	<summary>
+ IdClientePadre de PRO_GrupoCliente.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdClientePadre de PRO_GrupoCliente.</value>
+	<returns>Valor tipo System.Int32 que representa IdClientePadre de PRO_GrupoCliente.</returns>
+</member><member name="P:PROGrupoClienteEntity.IdClienteHijo">
+	<summary>
+ IdClienteHijo de PRO_GrupoCliente.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdClienteHijo de PRO_GrupoCliente.</value>
+	<returns>Valor tipo System.Int32 que representa IdClienteHijo de PRO_GrupoCliente.</returns>
+</member><member name="P:PROGrupoClienteEntity.CreadoPor">
+	<summary>
+ CreadoPor de PRO_GrupoCliente.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PRO_GrupoCliente.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PRO_GrupoCliente.</returns>
+</member><member name="P:PROGrupoClienteEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PRO_GrupoCliente.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PRO_GrupoCliente.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PRO_GrupoCliente.</returns>
+</member><member name="T:PROGrupoClienteEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_GrupoCliente en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_GrupoCliente</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._vendedor">
+	<summary>
+ Vendedor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Vendedor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._versionVendedor">
+	<summary>
+ VersionVendedor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo VersionVendedor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes1">
+	<summary>
+ Mes1 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes1 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes1CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes1FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes2">
+	<summary>
+ Mes2 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes2 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes2CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes2FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes3">
+	<summary>
+ Mes3 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes3 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes3CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes3FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes4">
+	<summary>
+ Mes4 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes4 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes4CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes4FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes5">
+	<summary>
+ Mes5 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes5 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes5CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes5FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes6">
+	<summary>
+ Mes6 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes6 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes6CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes6FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes7">
+	<summary>
+ Mes7 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes7 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes7CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes7FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes8">
+	<summary>
+ Mes8 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes8 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes8CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes8FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes9">
+	<summary>
+ Mes9 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes9 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes9CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes9FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes10">
+	<summary>
+ Mes10 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes10 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes10CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes10FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes11">
+	<summary>
+ Mes11 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes11 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes11CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes11FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes12">
+	<summary>
+ Mes12 de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes12 de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes12CerradoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo Mes12FechaCierre de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._creadoPor">
+	<summary>
+ CreadoPor de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVendedorEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PRO_PeriodoVendedor.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="P:PROPeriodoVendedorEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Vendedor">
+	<summary>
+ Vendedor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Vendedor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Vendedor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.VersionVendedor">
+	<summary>
+ VersionVendedor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Int32 que representa VersionVendedor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Int32 que representa VersionVendedor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes1">
+	<summary>
+ Mes1 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes1 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes1 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes1CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes1CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes2">
+	<summary>
+ Mes2 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes2 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes2 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes2CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes2CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes3">
+	<summary>
+ Mes3 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes3 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes3 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes3CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes3CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes4">
+	<summary>
+ Mes4 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes4 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes4 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes4CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes4CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes5">
+	<summary>
+ Mes5 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes5 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes5 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes5CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes5CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes6">
+	<summary>
+ Mes6 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes6 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes6 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes6CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes6CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes7">
+	<summary>
+ Mes7 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes7 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes7 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes7CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes7CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes8">
+	<summary>
+ Mes8 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes8 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes8 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes8CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes8CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes9">
+	<summary>
+ Mes9 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes9 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes9 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes9CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes9CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes10">
+	<summary>
+ Mes10 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes10 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes10 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes10CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes10CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes11">
+	<summary>
+ Mes11 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes11 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes11 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes11CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes11CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes12">
+	<summary>
+ Mes12 de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes12 de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.Boolean que representa Mes12 de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa Mes12CerradoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa Mes12CerradoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.Mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.CreadoPor">
+	<summary>
+ CreadoPor de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PRO_PeriodoVendedor.</returns>
+</member><member name="P:PROPeriodoVendedorEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PRO_PeriodoVendedor.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PRO_PeriodoVendedor.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PRO_PeriodoVendedor.</returns>
+</member><member name="T:PROPeriodoVendedorEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_PeriodoVendedor en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_PeriodoVendedor</remarks>
+</member><member name="F:PROPeriodoVersionEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._version">
+	<summary>
+ Version de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Version de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes1">
+	<summary>
+ Mes1 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes1 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes1CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes1FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes2">
+	<summary>
+ Mes2 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes2 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes2CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes2FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes3">
+	<summary>
+ Mes3 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes3 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes3CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes3FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes4">
+	<summary>
+ Mes4 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes4 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes4CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes4FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes5">
+	<summary>
+ Mes5 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes5 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes5CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes5FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes6">
+	<summary>
+ Mes6 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes6 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes6CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes6FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes7">
+	<summary>
+ Mes7 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes7 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes7CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes7FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes8">
+	<summary>
+ Mes8 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes8 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes8CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes8FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes9">
+	<summary>
+ Mes9 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes9 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes9CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes9FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes10">
+	<summary>
+ Mes10 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes10 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes10CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes10FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes11">
+	<summary>
+ Mes11 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes11 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes11CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes11FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes12">
+	<summary>
+ Mes12 de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes12 de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes12CerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo Mes12FechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._periodoCerrado">
+	<summary>
+ PeriodoCerrado de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo PeriodoCerrado de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._periodoCerradoPor">
+	<summary>
+ PeriodoCerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo PeriodoCerradoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._periodoFechaCierre">
+	<summary>
+ PeriodoFechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo PeriodoFechaCierre de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._enviadoProtean">
+	<summary>
+ EnviadoProtean de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo EnviadoProtean de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._enviadoProteanPor">
+	<summary>
+ EnviadoProteanPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo EnviadoProteanPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._enviadoProteanFecha">
+	<summary>
+ EnviadoProteanFecha de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo EnviadoProteanFecha de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._creadoPor">
+	<summary>
+ CreadoPor de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVersionEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PRO_PeriodoVersion.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="P:PROPeriodoVersionEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Version">
+	<summary>
+ Version de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Version de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Int32 que representa Version de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes1">
+	<summary>
+ Mes1 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes1 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes1 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes1CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes1CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes2">
+	<summary>
+ Mes2 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes2 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes2 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes2CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes2CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes3">
+	<summary>
+ Mes3 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes3 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes3 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes3CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes3CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes4">
+	<summary>
+ Mes4 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes4 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes4 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes4CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes4CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes5">
+	<summary>
+ Mes5 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes5 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes5 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes5CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes5CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes6">
+	<summary>
+ Mes6 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes6 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes6 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes6CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes6CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes7">
+	<summary>
+ Mes7 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes7 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes7 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes7CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes7CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes8">
+	<summary>
+ Mes8 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes8 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes8 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes8CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes8CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes9">
+	<summary>
+ Mes9 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes9 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes9 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes9CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes9CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes10">
+	<summary>
+ Mes10 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes10 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes10 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes10CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes10CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes11">
+	<summary>
+ Mes11 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes11 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes11 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes11CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes11CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes12">
+	<summary>
+ Mes12 de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes12 de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa Mes12 de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa Mes12CerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa Mes12CerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.Mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.PeriodoCerrado">
+	<summary>
+ PeriodoCerrado de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa PeriodoCerrado de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa PeriodoCerrado de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.PeriodoCerradoPor">
+	<summary>
+ PeriodoCerradoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa PeriodoCerradoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa PeriodoCerradoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.PeriodoFechaCierre">
+	<summary>
+ PeriodoFechaCierre de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa PeriodoFechaCierre de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa PeriodoFechaCierre de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.EnviadoProtean">
+	<summary>
+ EnviadoProtean de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.Boolean que representa EnviadoProtean de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.Boolean que representa EnviadoProtean de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.EnviadoProteanPor">
+	<summary>
+ EnviadoProteanPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa EnviadoProteanPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa EnviadoProteanPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.EnviadoProteanFecha">
+	<summary>
+ EnviadoProteanFecha de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa EnviadoProteanFecha de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa EnviadoProteanFecha de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.CreadoPor">
+	<summary>
+ CreadoPor de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PRO_PeriodoVersion.</returns>
+</member><member name="P:PROPeriodoVersionEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PRO_PeriodoVersion.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PRO_PeriodoVersion.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PRO_PeriodoVersion.</returns>
+</member><member name="T:PROPeriodoVersionEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_PeriodoVersion en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_PeriodoVersion</remarks>
+</member><member name="F:PROPeriodoVendedorVersionDetalleEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorVersionDetalleEntity._versionVendedor">
+	<summary>
+ VersionVendedor de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo VersionVendedor de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorVersionDetalleEntity._mes">
+	<summary>
+ Mes de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo Mes de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorVersionDetalleEntity._idCliente">
+	<summary>
+ IdCliente de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdCliente de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorVersionDetalleEntity._idProducto">
+	<summary>
+ IdProducto de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdProducto de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVendedorVersionDetalleEntity._cantidad">
+	<summary>
+ Cantidad de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo Cantidad de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="P:PROPeriodoVendedorVersionDetalleEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedorVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVendedorVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorVersionDetalleEntity.VersionVendedor">
+	<summary>
+ VersionVendedor de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa VersionVendedor de PRO_PeriodoVendedorVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa VersionVendedor de PRO_PeriodoVendedorVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorVersionDetalleEntity.Mes">
+	<summary>
+ Mes de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Mes de PRO_PeriodoVendedorVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa Mes de PRO_PeriodoVendedorVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorVersionDetalleEntity.IdCliente">
+	<summary>
+ IdCliente de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdCliente de PRO_PeriodoVendedorVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdCliente de PRO_PeriodoVendedorVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorVersionDetalleEntity.IdProducto">
+	<summary>
+ IdProducto de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdProducto de PRO_PeriodoVendedorVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdProducto de PRO_PeriodoVendedorVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVendedorVersionDetalleEntity.Cantidad">
+	<summary>
+ Cantidad de PRO_PeriodoVendedorVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Decimal que representa Cantidad de PRO_PeriodoVendedorVersionDetalle.</value>
+	<returns>Valor tipo System.Decimal que representa Cantidad de PRO_PeriodoVendedorVersionDetalle.</returns>
+</member><member name="T:PROPeriodoVendedorVersionDetalleEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_PeriodoVendedorVersionDetalle en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_PeriodoVendedorVersionDetalle</remarks>
+</member><member name="F:SECUsuarioEntity._idUsuario">
+	<summary>
+ IdUsuario de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo IdUsuario de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._nombreUsuario">
+	<summary>
+ NombreUsuario de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo NombreUsuario de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._activo">
+	<summary>
+ Activo de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo Activo de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._creadoPor">
+	<summary>
+ CreadoPor de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._mail">
+	<summary>
+ Mail de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo Mail de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._passwordMail">
+	<summary>
+ PasswordMail de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo PasswordMail de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._vendedor">
+	<summary>
+ Vendedor de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo Vendedor de la tabla SEC_Usuario</remarks>
+</member><member name="F:SECUsuarioEntity._idUsuarioOperador">
+	<summary>
+ IdUsuarioOperador de SEC_Usuario.
+ </summary>
+	<remarks>Equivalente al campo IdUsuarioOperador de la tabla SEC_Usuario</remarks>
+</member><member name="P:SECUsuarioEntity.IdUsuario">
+	<summary>
+ IdUsuario de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa IdUsuario de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa IdUsuario de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.NombreUsuario">
+	<summary>
+ NombreUsuario de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa NombreUsuario de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa NombreUsuario de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.Activo">
+	<summary>
+ Activo de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Activo de SEC_Usuario.</value>
+	<returns>Valor tipo System.Boolean que representa Activo de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.CreadoPor">
+	<summary>
+ CreadoPor de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de SEC_Usuario.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.Mail">
+	<summary>
+ Mail de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa Mail de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa Mail de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.PasswordMail">
+	<summary>
+ PasswordMail de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa PasswordMail de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa PasswordMail de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.Vendedor">
+	<summary>
+ Vendedor de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa Vendedor de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa Vendedor de SEC_Usuario.</returns>
+</member><member name="P:SECUsuarioEntity.IdUsuarioOperador">
+	<summary>
+ IdUsuarioOperador de SEC_Usuario.
+ </summary>
+	<value>Valor tipo System.String que representa IdUsuarioOperador de SEC_Usuario.</value>
+	<returns>Valor tipo System.String que representa IdUsuarioOperador de SEC_Usuario.</returns>
+</member><member name="T:SECUsuarioEntity">
+	<summary>
+ Entidad que representa un registro de la tabla SEC_Usuario en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla SEC_Usuario</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._idPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._mes">
+	<summary>
+ Mes de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo Mes de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._idCliente">
+	<summary>
+ IdCliente de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdCliente de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._idProducto">
+	<summary>
+ IdProducto de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdProducto de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._usuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo UsuarioModificacion de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._fechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo FechaHoraModificacion de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._maquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo MaquinaModificacion de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:BITPeriodoDetalleEntity._cantidad">
+	<summary>
+ Cantidad de BIT_PeriodoDetalle.
+ </summary>
+	<remarks>Equivalente al campo Cantidad de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="P:BITPeriodoDetalleEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.Mes">
+	<summary>
+ Mes de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Mes de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa Mes de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.IdCliente">
+	<summary>
+ IdCliente de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdCliente de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdCliente de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.IdProducto">
+	<summary>
+ IdProducto de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdProducto de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdProducto de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.UsuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.FechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.MaquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoDetalle.</returns>
+</member><member name="P:BITPeriodoDetalleEntity.Cantidad">
+	<summary>
+ Cantidad de BIT_PeriodoDetalle.
+ </summary>
+	<value>Valor tipo System.Decimal que representa Cantidad de BIT_PeriodoDetalle.</value>
+	<returns>Valor tipo System.Decimal que representa Cantidad de BIT_PeriodoDetalle.</returns>
+</member><member name="T:BITPeriodoDetalleEntity">
+	<summary>
+ Entidad que representa un registro de la tabla BIT_PeriodoDetalle en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla BIT_PeriodoDetalle</remarks>
+</member><member name="F:PETPerfileRecursoEntity._idPeticion">
+	<summary>
+ IdPeticion de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo IdPeticion de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._idPerfil">
+	<summary>
+ IdPerfil de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo IdPerfil de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._idRecurso">
+	<summary>
+ IdRecurso de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo IdRecurso de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._ingresar">
+	<summary>
+ Ingresar de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo Ingresar de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._validado">
+	<summary>
+ Validado de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo Validado de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._operado">
+	<summary>
+ Operado de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo Operado de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._operadoError">
+	<summary>
+ OperadoError de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo OperadoError de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._mensaje">
+	<summary>
+ Mensaje de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo Mensaje de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._bandera">
+	<summary>
+ Bandera de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo Bandera de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._creadoPor">
+	<summary>
+ CreadoPor de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:PETPerfileRecursoEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PET_PerfileRecurso.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PET_PerfileRecurso</remarks>
+</member><member name="P:PETPerfileRecursoEntity.IdPeticion">
+	<summary>
+ IdPeticion de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Int64 que representa IdPeticion de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Int64 que representa IdPeticion de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.IdPerfil">
+	<summary>
+ IdPerfil de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPerfil de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Int32 que representa IdPerfil de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.IdRecurso">
+	<summary>
+ IdRecurso de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdRecurso de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Int32 que representa IdRecurso de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.Ingresar">
+	<summary>
+ Ingresar de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Ingresar de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Boolean que representa Ingresar de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.Validado">
+	<summary>
+ Validado de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Validado de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Boolean que representa Validado de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.Operado">
+	<summary>
+ Operado de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Operado de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Boolean que representa Operado de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.OperadoError">
+	<summary>
+ OperadoError de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa OperadoError de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Boolean que representa OperadoError de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.Mensaje">
+	<summary>
+ Mensaje de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.String que representa Mensaje de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.String que representa Mensaje de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.Bandera">
+	<summary>
+ Bandera de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Bandera de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.Boolean que representa Bandera de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.CreadoPor">
+	<summary>
+ CreadoPor de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PET_PerfileRecurso.</returns>
+</member><member name="P:PETPerfileRecursoEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PET_PerfileRecurso.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PET_PerfileRecurso.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PET_PerfileRecurso.</returns>
+</member><member name="T:PETPerfileRecursoEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PET_PerfileRecurso en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PET_PerfileRecurso</remarks>
+</member><member name="F:SECAccesoEntity._idOpcion">
+	<summary>
+ IdOpcion de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo IdOpcion de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._idModulo">
+	<summary>
+ IdModulo de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo IdModulo de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._idUsuario">
+	<summary>
+ IdUsuario de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo IdUsuario de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._acceso">
+	<summary>
+ Acceso de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Acceso de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._agregar">
+	<summary>
+ Agregar de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Agregar de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._editar">
+	<summary>
+ Editar de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Editar de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._eliminar">
+	<summary>
+ Eliminar de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Eliminar de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._ejecutar">
+	<summary>
+ Ejecutar de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Ejecutar de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._imprimir">
+	<summary>
+ Imprimir de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Imprimir de la tabla SEC_Acceso</remarks>
+</member><member name="F:SECAccesoEntity._exportar">
+	<summary>
+ Exportar de SEC_Acceso.
+ </summary>
+	<remarks>Equivalente al campo Exportar de la tabla SEC_Acceso</remarks>
+</member><member name="P:SECAccesoEntity.IdOpcion">
+	<summary>
+ IdOpcion de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.String que representa IdOpcion de SEC_Acceso.</value>
+	<returns>Valor tipo System.String que representa IdOpcion de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.IdModulo">
+	<summary>
+ IdModulo de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdModulo de SEC_Acceso.</value>
+	<returns>Valor tipo System.Int32 que representa IdModulo de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.IdUsuario">
+	<summary>
+ IdUsuario de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.String que representa IdUsuario de SEC_Acceso.</value>
+	<returns>Valor tipo System.String que representa IdUsuario de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Acceso">
+	<summary>
+ Acceso de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Acceso de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Acceso de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Agregar">
+	<summary>
+ Agregar de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Agregar de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Agregar de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Editar">
+	<summary>
+ Editar de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Editar de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Editar de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Eliminar">
+	<summary>
+ Eliminar de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Eliminar de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Eliminar de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Ejecutar">
+	<summary>
+ Ejecutar de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Ejecutar de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Ejecutar de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Imprimir">
+	<summary>
+ Imprimir de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Imprimir de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Imprimir de SEC_Acceso.</returns>
+</member><member name="P:SECAccesoEntity.Exportar">
+	<summary>
+ Exportar de SEC_Acceso.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Exportar de SEC_Acceso.</value>
+	<returns>Valor tipo System.Boolean que representa Exportar de SEC_Acceso.</returns>
+</member><member name="T:SECAccesoEntity">
+	<summary>
+ Entidad que representa un registro de la tabla SEC_Acceso en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla SEC_Acceso</remarks>
+</member><member name="F:PROPeriodoEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._version">
+	<summary>
+ Version de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Version de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes1">
+	<summary>
+ Mes1 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes1 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes1CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes1FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes2">
+	<summary>
+ Mes2 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes2 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes2CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes2FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes3">
+	<summary>
+ Mes3 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes3 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes3CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes3FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes4">
+	<summary>
+ Mes4 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes4 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes4CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes4FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes5">
+	<summary>
+ Mes5 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes5 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes5CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes5FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes6">
+	<summary>
+ Mes6 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes6 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes6CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes6FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes7">
+	<summary>
+ Mes7 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes7 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes7CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes7FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes8">
+	<summary>
+ Mes8 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes8 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes8CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes8FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes9">
+	<summary>
+ Mes9 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes9 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes9CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes9FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes10">
+	<summary>
+ Mes10 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes10 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes10CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes10FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes11">
+	<summary>
+ Mes11 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes11 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes11CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes11FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes12">
+	<summary>
+ Mes12 de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes12 de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes12CerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo Mes12FechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._periodoCerrado">
+	<summary>
+ PeriodoCerrado de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo PeriodoCerrado de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._periodoCerradoPor">
+	<summary>
+ PeriodoCerradoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo PeriodoCerradoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._periodoFechaCierre">
+	<summary>
+ PeriodoFechaCierre de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo PeriodoFechaCierre de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._enviadoProtean">
+	<summary>
+ EnviadoProtean de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo EnviadoProtean de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._enviadoProteanPor">
+	<summary>
+ EnviadoProteanPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo EnviadoProteanPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._enviadoProteanFecha">
+	<summary>
+ EnviadoProteanFecha de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo EnviadoProteanFecha de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._creadoPor">
+	<summary>
+ CreadoPor de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo CreadoPor de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoEntity._fechaCreacion">
+	<summary>
+ FechaCreacion de PRO_Periodo.
+ </summary>
+	<remarks>Equivalente al campo FechaCreacion de la tabla PRO_Periodo</remarks>
+</member><member name="P:PROPeriodoEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_Periodo.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Version">
+	<summary>
+ Version de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Version de PRO_Periodo.</value>
+	<returns>Valor tipo System.Int32 que representa Version de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes1">
+	<summary>
+ Mes1 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes1 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes1 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes1CerradoPor">
+	<summary>
+ Mes1CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes1CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes1CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes1FechaCierre">
+	<summary>
+ Mes1FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes1FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes2">
+	<summary>
+ Mes2 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes2 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes2 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes2CerradoPor">
+	<summary>
+ Mes2CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes2CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes2CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes2FechaCierre">
+	<summary>
+ Mes2FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes2FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes3">
+	<summary>
+ Mes3 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes3 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes3 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes3CerradoPor">
+	<summary>
+ Mes3CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes3CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes3CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes3FechaCierre">
+	<summary>
+ Mes3FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes3FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes4">
+	<summary>
+ Mes4 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes4 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes4 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes4CerradoPor">
+	<summary>
+ Mes4CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes4CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes4CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes4FechaCierre">
+	<summary>
+ Mes4FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes4FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes5">
+	<summary>
+ Mes5 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes5 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes5 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes5CerradoPor">
+	<summary>
+ Mes5CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes5CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes5CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes5FechaCierre">
+	<summary>
+ Mes5FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes5FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes6">
+	<summary>
+ Mes6 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes6 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes6 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes6CerradoPor">
+	<summary>
+ Mes6CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes6CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes6CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes6FechaCierre">
+	<summary>
+ Mes6FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes6FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes7">
+	<summary>
+ Mes7 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes7 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes7 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes7CerradoPor">
+	<summary>
+ Mes7CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes7CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes7CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes7FechaCierre">
+	<summary>
+ Mes7FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes7FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes8">
+	<summary>
+ Mes8 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes8 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes8 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes8CerradoPor">
+	<summary>
+ Mes8CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes8CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes8CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes8FechaCierre">
+	<summary>
+ Mes8FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes8FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes9">
+	<summary>
+ Mes9 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes9 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes9 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes9CerradoPor">
+	<summary>
+ Mes9CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes9CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes9CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes9FechaCierre">
+	<summary>
+ Mes9FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes9FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes10">
+	<summary>
+ Mes10 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes10 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes10 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes10CerradoPor">
+	<summary>
+ Mes10CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes10CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes10CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes10FechaCierre">
+	<summary>
+ Mes10FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes10FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes11">
+	<summary>
+ Mes11 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes11 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes11 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes11CerradoPor">
+	<summary>
+ Mes11CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes11CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes11CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes11FechaCierre">
+	<summary>
+ Mes11FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes11FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes12">
+	<summary>
+ Mes12 de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa Mes12 de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa Mes12 de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes12CerradoPor">
+	<summary>
+ Mes12CerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa Mes12CerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa Mes12CerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.Mes12FechaCierre">
+	<summary>
+ Mes12FechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa Mes12FechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.PeriodoCerrado">
+	<summary>
+ PeriodoCerrado de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa PeriodoCerrado de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa PeriodoCerrado de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.PeriodoCerradoPor">
+	<summary>
+ PeriodoCerradoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa PeriodoCerradoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa PeriodoCerradoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.PeriodoFechaCierre">
+	<summary>
+ PeriodoFechaCierre de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa PeriodoFechaCierre de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa PeriodoFechaCierre de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.EnviadoProtean">
+	<summary>
+ EnviadoProtean de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.Boolean que representa EnviadoProtean de PRO_Periodo.</value>
+	<returns>Valor tipo System.Boolean que representa EnviadoProtean de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.EnviadoProteanPor">
+	<summary>
+ EnviadoProteanPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa EnviadoProteanPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa EnviadoProteanPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.EnviadoProteanFecha">
+	<summary>
+ EnviadoProteanFecha de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa EnviadoProteanFecha de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa EnviadoProteanFecha de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.CreadoPor">
+	<summary>
+ CreadoPor de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.String que representa CreadoPor de PRO_Periodo.</value>
+	<returns>Valor tipo System.String que representa CreadoPor de PRO_Periodo.</returns>
+</member><member name="P:PROPeriodoEntity.FechaCreacion">
+	<summary>
+ FechaCreacion de PRO_Periodo.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaCreacion de PRO_Periodo.</value>
+	<returns>Valor tipo System.DateTime que representa FechaCreacion de PRO_Periodo.</returns>
+</member><member name="T:PROPeriodoEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_Periodo en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_Periodo</remarks>
+</member><member name="F:PROPeriodoVersionDetalleEntity._idPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVersionDetalleEntity._version">
+	<summary>
+ Version de PRO_PeriodoVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo Version de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVersionDetalleEntity._mes">
+	<summary>
+ Mes de PRO_PeriodoVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo Mes de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVersionDetalleEntity._idCliente">
+	<summary>
+ IdCliente de PRO_PeriodoVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdCliente de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVersionDetalleEntity._idProducto">
+	<summary>
+ IdProducto de PRO_PeriodoVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo IdProducto de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="F:PROPeriodoVersionDetalleEntity._cantidad">
+	<summary>
+ Cantidad de PRO_PeriodoVersionDetalle.
+ </summary>
+	<remarks>Equivalente al campo Cantidad de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="P:PROPeriodoVersionDetalleEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de PRO_PeriodoVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de PRO_PeriodoVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVersionDetalleEntity.Version">
+	<summary>
+ Version de PRO_PeriodoVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Version de PRO_PeriodoVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa Version de PRO_PeriodoVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVersionDetalleEntity.Mes">
+	<summary>
+ Mes de PRO_PeriodoVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa Mes de PRO_PeriodoVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa Mes de PRO_PeriodoVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVersionDetalleEntity.IdCliente">
+	<summary>
+ IdCliente de PRO_PeriodoVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdCliente de PRO_PeriodoVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdCliente de PRO_PeriodoVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVersionDetalleEntity.IdProducto">
+	<summary>
+ IdProducto de PRO_PeriodoVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdProducto de PRO_PeriodoVersionDetalle.</value>
+	<returns>Valor tipo System.Int32 que representa IdProducto de PRO_PeriodoVersionDetalle.</returns>
+</member><member name="P:PROPeriodoVersionDetalleEntity.Cantidad">
+	<summary>
+ Cantidad de PRO_PeriodoVersionDetalle.
+ </summary>
+	<value>Valor tipo System.Decimal que representa Cantidad de PRO_PeriodoVersionDetalle.</value>
+	<returns>Valor tipo System.Decimal que representa Cantidad de PRO_PeriodoVersionDetalle.</returns>
+</member><member name="T:PROPeriodoVersionDetalleEntity">
+	<summary>
+ Entidad que representa un registro de la tabla PRO_PeriodoVersionDetalle en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla PRO_PeriodoVersionDetalle</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._idPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo IdPeriodo de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._vendedor">
+	<summary>
+ Vendedor de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo Vendedor de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._usuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo UsuarioModificacion de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._fechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo FechaHoraModificacion de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._maquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo MaquinaModificacion de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._cierraMes">
+	<summary>
+ CierraMes de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo CierraMes de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._abreMes">
+	<summary>
+ AbreMes de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo AbreMes de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._noMes">
+	<summary>
+ NoMes de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo NoMes de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="F:BITPeriodoVendedorCierreEntity._comentario">
+	<summary>
+ Comentario de BIT_PeriodoVendedorCierre.
+ </summary>
+	<remarks>Equivalente al campo Comentario de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member><member name="P:BITPeriodoVendedorCierreEntity.IdPeriodo">
+	<summary>
+ IdPeriodo de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.Int32 que representa IdPeriodo de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.Vendedor">
+	<summary>
+ Vendedor de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.String que representa Vendedor de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.String que representa Vendedor de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.UsuarioModificacion">
+	<summary>
+ UsuarioModificacion de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.String que representa UsuarioModificacion de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.FechaHoraModificacion">
+	<summary>
+ FechaHoraModificacion de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.DateTime que representa FechaHoraModificacion de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.MaquinaModificacion">
+	<summary>
+ MaquinaModificacion de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.String que representa MaquinaModificacion de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.CierraMes">
+	<summary>
+ CierraMes de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.Boolean que representa CierraMes de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.Boolean que representa CierraMes de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.AbreMes">
+	<summary>
+ AbreMes de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.Boolean que representa AbreMes de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.Boolean que representa AbreMes de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.NoMes">
+	<summary>
+ NoMes de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.Int32 que representa NoMes de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.Int32 que representa NoMes de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="P:BITPeriodoVendedorCierreEntity.Comentario">
+	<summary>
+ Comentario de BIT_PeriodoVendedorCierre.
+ </summary>
+	<value>Valor tipo System.String que representa Comentario de BIT_PeriodoVendedorCierre.</value>
+	<returns>Valor tipo System.String que representa Comentario de BIT_PeriodoVendedorCierre.</returns>
+</member><member name="T:BITPeriodoVendedorCierreEntity">
+	<summary>
+ Entidad que representa un registro de la tabla BIT_PeriodoVendedorCierre en forma de objeto.
+ </summary>
+	<remarks>Objeto equivalente a una tupla de la tabla BIT_PeriodoVendedorCierre</remarks>
+</member>
+</members>
+</doc>
