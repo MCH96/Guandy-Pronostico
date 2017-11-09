@@ -1,5 +1,5 @@
 ﻿Public Class frmBuscador
-
+    'A comment to prove update changes in desktop application
     Private Sub btnSeleccionar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionar.Click
         If Not Grid.Rows.Count = 1 Then
             i_LlaveBusqueda = Grid.GetData(Grid.Row, 0)
